@@ -86,7 +86,7 @@ function shuffle(array) {
 ///////////////////////////////// BacktoMain//////////////////////////////////////////
 
 function backToMain() {
-  location.replace("/index.html");
+  location.replace("index.html");
   console.log("sssssssssss");
 }
 
@@ -99,18 +99,18 @@ document.getElementsByClassName(".audio").volume = 0;
 function Play() {
   if (audio.paused) {
     audio.play();
-    document.getElementById("onoff").src = "/src/img/Sound On.png";
+    document.getElementById("onoff").src = "src/img/Sound On.png";
   } else {
     audio.pause();
-    document.getElementById("onoff").src = "/src/img/Sound Off.png";
+    document.getElementById("onoff").src = "src/img/Sound Off.png";
   }
 }
 
 var selectSoundEffect = new Audio();
-selectSoundEffect.src = "/src/msc/Hover Effect.mp3";
+selectSoundEffect.src = "src/msc/Hover Effect.mp3";
 
 var deselectSoundEffect = new Audio();
-deselectSoundEffect.src = "/src/msc/Select.mp3";
+deselectSoundEffect.src = "src/msc/Select.mp3";
 
 ////////////////////////////////////////////////////////////////////////////////////////
 const teamPlayerss = document.querySelector(".selected__players");
