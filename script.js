@@ -284,8 +284,8 @@ function start() {
         <header>
           <h1>We have two random teams ready for battle!</h1>
           <p class="credit">By Moe</p>
-          <label for="check"><img src="/src/img/Sound Off.png" alt="Sound Logo" class="soundLogo" id="onoff" onclick="Play()"></label>
-          <audio class="audio" src="/src/msc/Show.mp3" type="audio" loop=""></audio>
+          <label for="check"><img src="src/img/Sound Off.png" alt="Sound Logo" class="soundLogo" id="onoff" onclick="Play()"></label>
+          <audio class="audio" src="src/msc/Show.mp3" type="audio" loop=""></audio>
           <input type="checkbox" class="checkb" id="check"">
           <section class="players" id="secPick">
         </header>
@@ -404,8 +404,8 @@ function start() {
         <header>
           <h1>We have three random teams ready for battle!</h1>
           <p class="credit">By Moe</p>
-          <label for="check"><img src="/src/img/Sound Off.png" alt="Sound Logo" class="soundLogo" id="onoff" onclick="Play()"></label>
-          <audio class="audio" src="/src/msc/Show.mp3" type="audio" loop=""></audio>
+          <label for="check"><img src="src/img/Sound Off.png" alt="Sound Logo" class="soundLogo" id="onoff" onclick="Play()"></label>
+          <audio class="audio" src="src/msc/Show.mp3" type="audio" loop=""></audio>
           <input type="checkbox" class="checkb" id="check"">
           <section class="players" id="secPick">
         </header>
