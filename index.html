@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" id='select'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    
+    <!-- ///////////////////////FAVICON/////////////////////// -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="src/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="src/img/favicon/site.webmanifest">
+<link rel="mask-icon" href="src/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+    <link rel="shortcut icon" href="src/img/favicon/favicon.ico" />
+
+    <!-- ///////////////////////FAVICON/////////////////////// -->
+
+
+    
+    <title>Wednesday is a Good Day</title>
+   
+  </head>
+
+  <body>
+    <header>
+
+      <h1>Wednesday is a good day to start something new!</h1>
+      <p class="credit">By Moe</p>
+    </header>
+
+       
+ 
+    <main>
+
+
+      <!-------------------------------SOUND ON/OFF----------------------------------- -->
+      
+      <label for="check"><img src="src/img/Sound Off.png" alt="Sound Logo" class="soundLogo" id="onoff" onclick="Play()"></label>
+      <audio class="audio" src="src/msc/Show.mp3" type="audio" loop=""></audio>
+      <input type="checkbox" class="checkb" id="check"">
+      <section class="players" id="secPick">
+
+        <!------------------------------------------------------------------ -->
+
+
+
+
+
+
+
+
+
+        <div class="players__container">
+
+          <!-- /////////////////////////////////////////Mohamad//////////////////////////////// -->
+
+          <div class="players__box">
+            <img
+            src="src/img/players/MoePix.png "
+            alt="Moe"
+            class="players__photo"
+            id="moe" onclick="selectedId(this)"
+            />
+            <p class="players__name">Mousavi</p>
+          </div>
+
+
+          <!-- /////////////////////////////////////////Bahram/////////////////////////////// -->
+          
+          <div class="players__box">
+            <img
+            src="src/img/players/BahramPix.png "
+            alt="Bahram"
+            class="players__photo"
+            id="bahram" onclick="selectedId(this)"
+            />
+            <p class="players__name">Bahram</p>
+          </div>
+          
+                 <!-- /////////////////////////////////////////Keshavarz/////////////////////////////// -->
+
+          
+          <div class="players__box">
+            <img
+            src="src/img/players/KeshaPix.png "
+            alt="Keshavarz"
+            class="players__photo"
+            id="keshavarz" onclick="selectedId(this)"
+            />
+            <p class="players__name">Keshavarz</p>
+          </div>
+
+                 <!-- /////////////////////////////////////////Bahman/////////////////////////////// -->
+
+
+
+          <div class="players__box" >
+            <img
+              src="src/img/players/BahmanPix.png "
+              alt="Bahman"
+              class="players__photo"
+              id="bahman" onclick="selectedId(this)"
+
+            />
+            <p class="players__name">Bahman</p>
+          </div>
+
+
+
+                           <!-- /////////////////////////////////////////Mahmudi/////////////////////////////// -->
+
+          
+          <div class="players__box">
+            <img
+              src="src/img/players/MahmudiPix.png "
+              alt="Mahmudi"
+              class="players__photo"
+              id="mahmudi" onclick="selectedId(this)"
+            />
+            <p class="players__name">Mahmudi</p>
+          </div>
+
+
+          <!-- /////////////////////////////////////////Shahab/////////////////////////////// -->
+    
+       <div class="players__box">
+         <img
+           src="src/img/players/shahabPix.png "
+           alt="Shahab"
+           class="players__photo"
+           id="shahab" onclick="selectedId(this)"
+         />
+         <p class="players__name">Shahab</p>
+       </div>
+                                     <!-- /////////////////////////////////////////Ehsan/////////////////////////////// -->
+
+          <div class="players__box">
+            <img
+              src="src/img/players/EhsanPix.png "
+              alt="Ehsan"
+              class="players__photo"
+              id="ehsan" onclick="selectedId(this)"
+            />
+            <p class="players__name">Ehsan</p>
+          </div>
+
+
+        <!-- /////////////////////////////////////////Navid/////////////////////////////// -->
+
+
+          <div class="players__box">
+            <img
+              src="src/img/players/NavidPix.png "
+              alt="Navid"
+              class="players__photo"
+              id="navid" onclick="selectedId(this)"
+            />
+            <p class="players__name">Navid</p>
+          </div>
+
+
+        <!-- /////////////////////////////////////////Rajab/////////////////////////////// -->
+
+
+          <div class="players__box">
+            <img
+              src="src/img/players/RajabPix.png "
+              alt="Rajab"
+              class="players__photo"
+              id="rajab" onclick="selectedId(this)"
+            />
+            <p class="players__name">Rajab</p>
+          </div>
+          
+
+      <!-- /////////////////////////////////////////Rasool/////////////////////////////// -->
+
+          <div class="players__box">
+            <img
+              src="src/img/players/UnknownPix.png "
+              alt="Rasool"
+              class="players__photo"
+              id="rasool" onclick="selectedId(this)"
+            />
+            <p class="players__name">Rasool</p>
+          </div>
+
+      <!-- /////////////////////////////////////////Iman/////////////////////////////// -->
+
+
+          <div class="players__box">
+            <img
+              src="src/img/players/UnknownPix.png "
+              alt="Iman"
+              class="players__photo"
+              id="iman" onclick="selectedId(this)"
+            />
+            <p class="players__name">Iman</p>
+          </div>
+
+
+             <!-- /////////////////////////////////////////Mehrdad/////////////////////////////// -->
+
+
+          <div class="players__box">
+            <img
+              src="src/img/players/UnknownPix.png "
+              alt="Mehrdad"
+              class="players__photo"
+              id="mehrdad" onclick="selectedId(this)"
+            />
+            <p class="players__name">Mehrdad</p>
+          </div>
+
+             <!-- /////////////////////////////////////////Mehrshad/////////////////////////////// -->
+
+
+          <div class="players__box">
+            <img
+              src="src/img/players/UnknownPix.png "
+              alt="Mehrshad"
+              class="players__photo"
+              id="mehrshad" onclick="selectedId(this)"
+            />
+            <p class="players__name">Mehrshad</p>
+          </div>
+
+            <!-- /////////////////////////////////////////Hamidian/////////////////////////////// -->
+
+
+            <div class="players__box">
+              <img
+                src="src/img/players/UnknownPix.png "
+                alt="Hamidian"
+                class="players__photo"
+                id="hamidian" onclick="selectedId(this)"
+              />
+              <p class="players__name">Hamidian</p>
+            </div>
+
+                   <!-- /////////////////////////////////////////Payam/////////////////////////////// -->
+
+
+                   <div class="players__box">
+                    <img
+                      src="src/img/players/UnknownPix.png "
+                      alt="Payam"
+                      class="players__photo"
+                      id="payam" onclick="selectedId(this)"
+                    />
+                    <p class="players__name">Payam</p>
+                  </div>
+      
+
+  <!-- /////////////////////////////////////////Add Player/////////////////////////////// -->
+ 
+          <div class="players__box">
+            <img
+              src="src/img/players/Add.png "
+              alt="Add Player"
+              class="players__photo"
+
+            />
+            <p class="players__name">Add a Player</p>
+          </div>
+        </div>
+        
+      <!-- /////////////////////////////PICKED PLAYERS/////////////////////////////// -->
+
+      </section>
+
+      <section class="players__selected">
+        <div class="pickedplayers">
+
+        <div class="selected__container">
+
+          
+          <p class="team__text">Players</p>
+          
+          <div class="selected__players">
+          
+            <div class="lineup__box" id="unknown">
+              <img
+                src="src/img/lineup/unknown.png "
+                alt="Add Player"
+                class="lineup__photo_first"
+              />
+            </div>
+            </div>
+            
+<!--/////////////////////////// MODAL POPUP TEAM NUMBER//////////////////////////// -->
+          
+            <div class="modalbox" id="mdl">
+
+  
+              <div class="modalbox__content">
+
+                <div class="modalbox__content-header">
+
+                  <h2 class="modalbox__content-title">Teams</h2>
+                </div>
+
+                <div class="modalbox__content-text">
+                <p class="modaltext">How many teams do you want to form?</p>
+                <div class="teamscontainer">
+
+                  <div class="teamscontainer__teams">
+                    <p class="arrow1 blink-inf" id="ar1">►</p>
+
+                    <p class="items" id="two" onclick="choice(this)">2 Teams</p></div>
+                  <div class="teamscontainer__teams">
+                    <p class="arrow2 blink-inf" id="ar2">►</p>
+                    <p class="items" id="three" onclick="choice(this)">3 Teams</p>
+                  </div>
+               
+              </div>
+
+              </div>
+                <div class="modalbox__content-btn">
+                  <button class="btn-modal btn" onclick="bck()">Back</button>
+
+                  <button class="btn-modal btn" id="strt" onclick="next()">Next</button>
+                </div>
+  
+              </div>
+            </div>
+
+
+
+
+
+
+<!--/////////////////////////// MODAL POPUP MODE//////////////////////////// -->
+
+
+
+
+            <div class="modalbox" id="mdl2">
+
+  
+              <div class="modalbox__content">
+
+                <div class="modalbox__content-header">
+
+                  <h2 class="modalbox__content-title">LineUp Mode</h2>
+                </div>
+
+                <div class="modalbox__content-text">
+                <p class="modaltext">The lineup should be fair or random?</p>
+                <div class="teamscontainer">
+
+                  <div class="teamscontainer__teams">
+                    <p class="arrow1 blink-inf" id="ar3">►</p>
+                    <p class="lockic">	
+                      &#128274</p>
+                    <p class="items locked" id="fr" onclick="choice1(this)">Fair</p>
+                    </div>
+                  <div class="teamscontainer__teams">
+                    <p class="arrow2 blink-inf" id="ar4">►</p>
+                    <p class="items" id="rnd" onclick="choice1(this)">Random</p>
+                  </div>
+               
+              </div>
+
+              </div>
+                <div class="modalbox__content-btn">
+                  <button class="btn-modal btn" onclick="bck2()">Back</button>
+
+                  <button class="btn-modal btn" id="strt" onclick="start()">Start!</button>
+                </div>
+  
+              </div>
+            </div>
+
+
+
+        <!-- ----------------------BUTTON --------------------->
+
+            
+            <div class="btn__container" id= 'p'>
+              <button class="btn-main btn" id='btn' onclick="sbmt()">Submit!</button>
+            </div>
+
+
+
+
+          </section>
+
+
+
+
+
+
+          <!---------------------- MODAL ERROR ------------------------------>
+
+
+          <div class="modalboxerror" id="mdlerror">
+
+  
+            <div class="modalbox__content">
+
+              <div class="modalbox__content-header">
+
+                <h2 class="modalbox__content-title">OH!</h2>
+              </div>
+
+              <div class="modalbox__content-text">
+              <p class="modaltext modaltexterror" id="errtxt"></p>        
+             
+            </div>
+
+            <div class="modalboxerror__content-btn">
+              <button class="btn-modal btn" onclick="ok()">OK</button>
+            </div>
+            </div>
+
+            </div>
+          </div>
+
+
+          <!--------------------------------------------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
