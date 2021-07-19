@@ -1,32 +1,34 @@
 "use strict";
 
 class Player {
-  constructor(name, speed, defence, attack, shoot, pass, seed) {
+  constructor(name, seed, defence, speed, shoot, pass, tech) {
     this.name = name;
-    this.speed = speed;
+    this.seed = seed;
     this.defence = defence;
-    this.attack = attack;
+    this.speed = speed;
     this.shoot = shoot;
     this.pass = pass;
-    this.seed = seed;
+    this.tech = tech;
   }
 }
 
-const mohamad = new Player("moe", 7.5, 7, 10, 10, 10, 1);
-const keshavarz = new Player("keshavarz", 3, 3, 5, 6, 7, 1);
-const bahram = new Player("bahram", 3, 3, 5, 6, 7, 3);
-const bahman = new Player("bahman", 3, 3, 5, 6, 7, 2);
-const rajab = new Player("rajab", 3, 3, 5, 6, 7, 3);
-const ehsan = new Player("ehsan", 3, 3, 5, 6, 7, 1);
-const navid = new Player("navid", 3, 3, 5, 6, 7, 3);
-const shahab = new Player("shahab", 3, 3, 5, 6, 7, 3);
-const mahmudi = new Player("mahmudi", 3, 3, 5, 6, 7, 2);
-const rasool = new Player("rasool", 3, 3, 5, 6, 7, 3);
-const mehrdad = new Player("mehrdad", 3, 3, 5, 6, 7, 4);
-const mehrshad = new Player("mehrshad", 3, 3, 5, 6, 7, 1);
-const iman = new Player("iman", 3, 3, 5, 6, 7, 4);
-const hamidian = new Player("hamidian", 3, 3, 5, 6, 7, 5);
-const payam = new Player("payam", 3, 3, 5, 6, 7, 2);
+const mohamad = new Player("moe", 1, 7.5, 7, 10, 10, 10);
+const keshavarz = new Player("keshavarz", 1, 3, 5, 6, 7, 7);
+const bahram = new Player("bahram", 3, 3, 3, 5, 7, 4);
+const bahman = new Player("bahman", 2, 3, 3, 6, 7, 5);
+const rajab = new Player("rajab", 5, 3, 3, 6, 7, 2);
+const ehsan = new Player("ehsan", 2, 3, 3, 6, 7, 4);
+const navid = new Player("navid", 3, 3, 3, 6, 7, 4);
+const shahab = new Player("shahab", 2, 3, 3, 6, 7, 5);
+const mahmudi = new Player("mahmudi", 2, 3, 5, 6, 7, 6);
+const rasool = new Player("rasool", 3, 3, 3, 6, 7, 8);
+const mehrdad = new Player("mehrdad", 3, 3, 3, 6, 7, 7);
+const mehrshad = new Player("mehrshad", 2, 3, 5, 6, 7, 6);
+const iman = new Player("iman", 4, 3, 3, 5, 6, 6);
+const hamidian = new Player("hamidian", 5, 3, 5, 6, 7, 5);
+const payam = new Player("payam", 1, 3, 3, 5, 7, 5);
+const farahani = new Player("farahani", 2, 3, 3, 5, 7, 7);
+const mamul = new Player("mamul", 3, 3, 3, 5, 7, 6);
 const unknown = new Player("unknown");
 
 const allPlayers = [
@@ -45,6 +47,8 @@ const allPlayers = [
   iman,
   hamidian,
   payam,
+  farahani,
+  mamul,
   unknown,
 ];
 
@@ -62,6 +66,8 @@ let seed2 = [];
 let seed3 = [];
 let seed4 = [];
 let seed5 = [];
+
+///////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////////////
 function shuffle(array) {
@@ -86,7 +92,7 @@ function shuffle(array) {
 ///////////////////////////////// BacktoMain//////////////////////////////////////////
 
 function backToMain() {
-  location.replace("index.html");
+  location.replace("/index.html");
   console.log("sssssssssss");
 }
 
@@ -99,18 +105,18 @@ document.getElementsByClassName(".audio").volume = 0;
 function Play() {
   if (audio.paused) {
     audio.play();
-    document.getElementById("onoff").src = "src/img/Sound On.png";
+    document.getElementById("onoff").src = "/src/img/Sound On.png";
   } else {
     audio.pause();
-    document.getElementById("onoff").src = "src/img/Sound Off.png";
+    document.getElementById("onoff").src = "/src/img/Sound Off.png";
   }
 }
 
 var selectSoundEffect = new Audio();
-selectSoundEffect.src = "src/msc/Hover Effect.mp3";
+selectSoundEffect.src = "/src/msc/Hover Effect.mp3";
 
 var deselectSoundEffect = new Audio();
-deselectSoundEffect.src = "src/msc/Select.mp3";
+deselectSoundEffect.src = "/src/msc/Select.mp3";
 
 ////////////////////////////////////////////////////////////////////////////////////////
 const teamPlayerss = document.querySelector(".selected__players");
@@ -196,8 +202,25 @@ var disp = document.getElementById("mdl");
 var disp1 = document.getElementById("mdl2");
 var err = document.getElementById("mdlerror");
 const errtxt = document.getElementById("errtxt");
+let teamfair1 = [];
+let teamfair2 = [];
+let x = 0;
+let i = x + 1;
 
 function sbmt() {
+  for (let i; i < thisWeekPlayers.length; i++) {
+    if (thisWeekPlayers[x].seed === thisWeekPlayers[i].seed) {
+      teamfair1.push(thisWeekPlayers[x]);
+      teamfair2.push(thisWeekPlayers[i]);
+      thisWeekPlayers.splice(x, 1);
+      thisWeekPlayers.splice(i - 1, 1);
+      x = 0;
+      i = 1;
+      console.log(`X = ${x}`);
+      console.log(`i = ${i}`);
+    }
+  }
+
   var sbmt = document.getElementsByClassName("selected__players");
   document.getElementById("ar1").style.opacity = "1";
 
@@ -284,8 +307,8 @@ function start() {
         <header>
           <h1>We have two random teams ready for battle!</h1>
           <p class="credit">By Moe</p>
-          <label for="check"><img src="src/img/Sound Off.png" alt="Sound Logo" class="soundLogo" id="onoff" onclick="Play()"></label>
-          <audio class="audio" src="src/msc/Show.mp3" type="audio" loop=""></audio>
+          <label for="check"><img src="/src/img/Sound Off.png" alt="Sound Logo" class="soundLogo" id="onoff" onclick="Play()"></label>
+          <audio class="audio" src="/src/msc/Show.mp3" type="audio" loop=""></audio>
           <input type="checkbox" class="checkb" id="check"">
           <section class="players" id="secPick">
         </header>
@@ -404,8 +427,8 @@ function start() {
         <header>
           <h1>We have three random teams ready for battle!</h1>
           <p class="credit">By Moe</p>
-          <label for="check"><img src="src/img/Sound Off.png" alt="Sound Logo" class="soundLogo" id="onoff" onclick="Play()"></label>
-          <audio class="audio" src="src/msc/Show.mp3" type="audio" loop=""></audio>
+          <label for="check"><img src="/src/img/Sound Off.png" alt="Sound Logo" class="soundLogo" id="onoff" onclick="Play()"></label>
+          <audio class="audio" src="/src/msc/Show.mp3" type="audio" loop=""></audio>
           <input type="checkbox" class="checkb" id="check"">
           <section class="players" id="secPick">
         </header>
