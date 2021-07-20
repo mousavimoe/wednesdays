@@ -72,7 +72,7 @@ h1 {
 .lineup__photo-rest {
   height: 20rem;
   width: auto;
-  margin-left: -9rem;
+  margin-left: -7rem;
 }
 
 .team__container {
@@ -129,7 +129,7 @@ h1 {
 }
 
 .playername-rest {
-  margin-left: -9rem;
+  margin-left: -7rem;
   font-size: 1.2rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -215,7 +215,7 @@ h1 {
 
   .lineup__photo-rest {
     height: 17rem;
-    margin-left: -12rem;
+    margin-left: -8rem;
   }
 }
 
@@ -268,6 +268,6 @@ h1 {
 
   .lineup__photo-rest {
     height: 17rem;
-    margin-left: -12rem;
+    margin-left: -8rem;
   }
 }

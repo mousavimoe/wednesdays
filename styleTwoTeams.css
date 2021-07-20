@@ -72,7 +72,7 @@ h1 {
 .lineup__photo-rest {
   height: 24rem;
   width: auto;
-  margin-left: -9rem;
+  margin-left: -7rem;
 }
 .team__container {
   text-align: center;
@@ -105,7 +105,7 @@ h1 {
 }
 
 .playername-rest {
-  margin-left: -9rem;
+  margin-left: -7rem;
   font-size: 1.45rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -169,7 +169,7 @@ h1 {
 
   .lineup__photo-rest {
     height: 22rem;
-    margin-left: -13rem;
+    margin-left: -7rem;
   }
 
   header {
@@ -188,7 +188,7 @@ h1 {
 
   .playername-rest {
     font-size: 1.2rem;
-    margin-left: -13rem;
+    margin-left: -7rem;
   }
   .playername-first {
     font-size: 1.15rem;
@@ -218,7 +218,7 @@ h1 {
 
   .lineup__photo-rest {
     height: 22rem;
-    margin-left: -13rem;
+    margin-left: -7rem;
   }
 
   header {
@@ -237,7 +237,7 @@ h1 {
 
   .playername-rest {
     font-size: 1.2rem;
-    margin-left: -13rem;
+    margin-left: -7rem;
   }
   .playername-first {
     font-size: 1.15rem;

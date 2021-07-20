@@ -110,7 +110,7 @@ main {
 .lineup__photo {
   height: 19.5rem;
   width: auto;
-  margin-left: -9rem;
+  margin-left: -7rem;
 }
 
 .fixer {
@@ -308,7 +308,7 @@ h1 {
 }
 
 .lineup__box1 {
-  margin-left: -9rem;
+  margin-left: -7rem;
 }
 
 .blink-inf {
@@ -529,7 +529,7 @@ h1 {
   }
 
   .lineup__box1 {
-    margin-left: -11.5rem;
+    margin-left: -8.5rem;
   }
   .selected__players {
     flex-wrap: wrap;
