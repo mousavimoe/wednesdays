@@ -517,40 +517,78 @@ function start() {
     }
     thisWeekPlayers.sort((a, b) => (a.ovr > b.ovr ? -1 : 1));
 
-    for (let i = 0; i < thisWeekPlayers.length / 6; i++) {
-      teamfair1.push(thisWeekPlayers[0]);
-      thisWeekPlayers.splice(0, 1);
-      teamfair2.push(thisWeekPlayers[0]);
-      thisWeekPlayers.splice(0, 1);
-      teamfair3.push(thisWeekPlayers[0]);
-      thisWeekPlayers.splice(0, 1);
-      teamfair3.push(thisWeekPlayers[0]);
-      thisWeekPlayers.splice(0, 1);
-      teamfair2.push(thisWeekPlayers[0]);
-      thisWeekPlayers.splice(0, 1);
-      teamfair1.push(thisWeekPlayers[0]);
-      thisWeekPlayers.splice(0, 1);
-    }
+    if (thisWeekPlayers.length % 2 === 0) {
+      for (let i = -1; i < thisWeekPlayers.length / 6; i++) {
+        teamfair1.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+        teamfair2.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+        teamfair3.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+        teamfair3.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+        teamfair2.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+        teamfair1.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+      }
 
-    if (thisWeekPlayers.length != 0) {
-      teamfair1.push(thisWeekPlayers[0]);
-      thisWeekPlayers.splice(0, 1);
-    }
-    if (thisWeekPlayers.length != 0) {
-      teamfair2.push(thisWeekPlayers[0]);
-      thisWeekPlayers.splice(0, 1);
-    }
-    if (thisWeekPlayers.length != 0) {
-      teamfair3.push(thisWeekPlayers[0]);
-      thisWeekPlayers.splice(0, 1);
-    }
-    if (thisWeekPlayers.length != 0) {
-      teamfair3.push(thisWeekPlayers[0]);
-      thisWeekPlayers.splice(0, 1);
-    }
-    if (thisWeekPlayers.length != 0) {
-      teamfair2.push(thisWeekPlayers[0]);
-      thisWeekPlayers.splice(0, 1);
+      if (thisWeekPlayers.length != 0) {
+        teamfair1.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+      }
+      if (thisWeekPlayers.length != 0) {
+        teamfair2.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+      }
+      if (thisWeekPlayers.length != 0) {
+        teamfair3.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+      }
+      if (thisWeekPlayers.length != 0) {
+        teamfair3.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+      }
+      if (thisWeekPlayers.length != 0) {
+        teamfair2.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+      }
+    } else {
+      for (let i = 0; i < thisWeekPlayers.length / 6; i++) {
+        teamfair1.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+        teamfair2.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+        teamfair3.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+        teamfair3.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+        teamfair2.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+        teamfair1.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+      }
+
+      if (thisWeekPlayers.length != 0) {
+        teamfair1.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+      }
+      if (thisWeekPlayers.length != 0) {
+        teamfair2.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+      }
+      if (thisWeekPlayers.length != 0) {
+        teamfair3.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+      }
+      if (thisWeekPlayers.length != 0) {
+        teamfair3.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+      }
+      if (thisWeekPlayers.length != 0) {
+        teamfair2.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+      }
     }
 
     let team1 = teamfair1;
