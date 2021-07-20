@@ -148,7 +148,7 @@ h1 {
 
 @media screen and (max-width: 640px) {
   html {
-    font-size: 46.5%;
+    font-size: 41.5%;
   }
 
   h1 {
@@ -159,8 +159,8 @@ h1 {
   }
 
   .soundLogo {
-    margin-top: 6rem;
-    height: 9rem;
+    margin-top: 8rem;
+    height: 7rem;
     width: auto;
   }
   .lineup__photo_first {
