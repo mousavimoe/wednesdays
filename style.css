@@ -394,6 +394,33 @@ h1 {
   }
 }
 
+
+
+@media screen and (max-width: 1366px) {
+  html {
+    font-size: 48%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  .players__container {
+
+    height: 44vh;
+  }
+
+  .soundLogo {
+    width: 9rem;
+    height: auto;
+    position: absolute;
+    padding-bottom: 4rem;
+    margin-top: 3rem;
+    transform: translate(0%, -100%);
+  }
+
+
+
 @media screen and (max-width: 640px) {
   html {
     font-size: 42.5%;

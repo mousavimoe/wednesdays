@@ -166,6 +166,27 @@ h1 {
   background-color: #ccc;
 }
 
+@media screen and (max-width: 1366px) {
+  html {
+    font-size: 44%;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    line-height: 3rem;
+  }
+  .players__container {
+
+    height: 44vh;
+  }
+
+  .soundLogo {
+    width: 9rem;
+  }
+.credit{
+  font-size: 1.2rem;
+}
+
 @media screen and (max-width: 640px) {
   html {
     font-size: 39.5%;
