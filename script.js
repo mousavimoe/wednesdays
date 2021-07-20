@@ -1,9 +1,8 @@
 "use strict";
 
 class Player {
-  constructor(name, seed, defence, speed, shoot, pass, tech) {
+  constructor(name, defence, speed, shoot, pass, tech) {
     this.name = name;
-    this.seed = seed;
     this.defence = defence;
     this.speed = speed;
     this.shoot = shoot;
@@ -12,23 +11,23 @@ class Player {
   }
 }
 
-const mohamad = new Player("moe", 1, 7.5, 7, 10, 10, 10);
-const keshavarz = new Player("keshavarz", 1, 3, 5, 6, 7, 7);
-const bahram = new Player("bahram", 3, 3, 3, 5, 7, 4);
-const bahman = new Player("bahman", 2, 3, 3, 6, 7, 5);
-const rajab = new Player("rajab", 5, 3, 3, 6, 7, 2);
-const ehsan = new Player("ehsan", 2, 3, 3, 6, 7, 4);
-const navid = new Player("navid", 3, 3, 3, 6, 7, 4);
-const shahab = new Player("shahab", 2, 3, 3, 6, 7, 5);
-const mahmudi = new Player("mahmudi", 2, 3, 5, 6, 7, 6);
-const rasool = new Player("rasool", 3, 3, 3, 6, 7, 8);
-const mehrdad = new Player("mehrdad", 3, 3, 3, 6, 7, 7);
-const mehrshad = new Player("mehrshad", 2, 3, 5, 6, 7, 6);
-const iman = new Player("iman", 4, 3, 3, 5, 6, 6);
-const hamidian = new Player("hamidian", 5, 3, 5, 6, 7, 5);
-const payam = new Player("payam", 1, 3, 3, 5, 7, 5);
-const farahani = new Player("farahani", 2, 3, 3, 5, 7, 7);
-const mamul = new Player("mamul", 3, 3, 3, 5, 7, 6);
+const mohamad = new Player("moe", 8, 6, 10, 10, 10);
+const keshavarz = new Player("keshavarz", 10, 5.5, 9, 8, 8);
+const bahram = new Player("bahram", 4, 2, 5, 9, 7.5);
+const bahman = new Player("bahman", 4, 5, 8, 9, 10);
+const rajab = new Player("rajab", 2, 2, 5, 9, 4.5);
+const ehsan = new Player("ehsan", 8, 5, 8.5, 7, 5);
+const navid = new Player("navid", 6.5, 5, 7.5, 7, 5);
+const shahab = new Player("shahab", 8, 5, 6.5, 6, 6);
+const mahmudi = new Player("mahmudi", 7, 10, 8, 7, 6);
+const rasool = new Player("rasool", 5, 2, 8, 9, 9.5);
+const mehrdad = new Player("mehrdad", 5, 7, 6, 5, 8);
+const mehrshad = new Player("mehrshad", 7, 7, 8.5, 8, 8);
+const iman = new Player("iman", 5, 5, 7.5, 7, 8);
+const hamidian = new Player("hamidian", 3, 3, 3, 3, 3);
+const payam = new Player("payam", 7, 6, 9.5, 7.5, 7);
+const farahani = new Player("farahani", 4, 6.5, 8, 8, 7.5);
+const mamul = new Player("mamul", 6, 6, 8, 7, 6.5);
 const unknown = new Player("unknown");
 
 const allPlayers = [
@@ -95,8 +94,61 @@ function backToMain() {
   location.replace("/index.html");
   console.log("sssssssssss");
 }
+///////////////////////////////////////////////
 
-////////////////////////////////////////// MUSIC//////////////////////////////////////
+function ovr(q) {
+  const ovr = Math.ceil((q.defence + q.speed + q.shoot + q.pass + q.tech) / 5);
+  q.ovr = ovr;
+  return ovr;
+}
+///////////////////SECTION/// FUNCTION SKILLS//////////////////////////////////////
+
+function def(q) {
+  let skl = 0;
+  for (let i = 0; i < q.length; i++) {
+    skl = skl + q[i].defence;
+  }
+  skl = Math.ceil(skl / q.length);
+  return skl;
+}
+
+function speed(q) {
+  let skl = 0;
+  for (let i = 0; i < q.length; i++) {
+    skl = skl + q[i].speed;
+  }
+  skl = Math.ceil(skl / q.length);
+  return skl;
+}
+
+function shoot(q) {
+  let skl = 0;
+  for (let i = 0; i < q.length; i++) {
+    skl = skl + q[i].shoot;
+  }
+  skl = Math.ceil(skl / q.length);
+  return skl;
+}
+
+function pass(q) {
+  let skl = 0;
+  for (let i = 0; i < q.length; i++) {
+    skl = skl + q[i].pass;
+  }
+  skl = Math.ceil(skl / q.length);
+  return skl;
+}
+
+function tech(q) {
+  let skl = 0;
+  for (let i = 0; i < q.length; i++) {
+    skl = skl + q[i].tech;
+  }
+  skl = Math.ceil(skl / q.length);
+  return skl;
+}
+
+//////////////////////////////SECTION//////////// MUSIC//////////////////////////////////////
 var pause = document.querySelector(".pause");
 var audio = document.querySelector(".audio");
 
@@ -204,23 +256,34 @@ var err = document.getElementById("mdlerror");
 const errtxt = document.getElementById("errtxt");
 let teamfair1 = [];
 let teamfair2 = [];
+let teamfair3 = [];
 let x = 0;
 let i = x + 1;
 
-function sbmt() {
-  for (let i; i < thisWeekPlayers.length; i++) {
-    if (thisWeekPlayers[x].seed === thisWeekPlayers[i].seed) {
-      teamfair1.push(thisWeekPlayers[x]);
-      teamfair2.push(thisWeekPlayers[i]);
-      thisWeekPlayers.splice(x, 1);
-      thisWeekPlayers.splice(i - 1, 1);
+function equalizer(team) {
+  var overall = 0;
+  for (i = 0; i < team.length; i++) {
+    ovr(team[i]);
+    overall = overall + team[i].ovr;
+  }
+  return overall;
+}
+function firstToEnd(list) {
+  for (i; i < list.length; i++) {
+    if (list[x].ovr === list[i].ovr) {
+      teamfair1.push(list[x]);
+      teamfair2.push(list[i]);
+      list.splice(x, 1);
+      list.splice(i - 1, 1);
       x = 0;
-      i = 1;
-      console.log(`X = ${x}`);
-      console.log(`i = ${i}`);
+      i = x + 1;
+      let splitted = list;
+      return splitted;
     }
   }
+}
 
+function sbmt() {
   var sbmt = document.getElementsByClassName("selected__players");
   document.getElementById("ar1").style.opacity = "1";
 
@@ -280,22 +343,410 @@ function choice1(elem) {
   }
 }
 
-////////////////////////////////////// SEED //////////////////////////////////////////
-
 function start() {
+  /////////////SECTION/////////////TWO TEAMS FAIR//////////////////////////////////////////
   const secSelect = document.getElementById("select");
 
-  if (document.getElementById("ar3").style.opacity === "1") {
-    errtxt.innerHTML = "Currently not available!";
-    err.style.display = "flex";
-  } else {
-    if (document.getElementById("ar1").style.opacity === "1") {
-      let shuffledplayers = shuffle(thisWeekPlayers);
+  if (
+    document.getElementById("ar3").style.opacity === "1" &&
+    document.getElementById("ar1").style.opacity === "1"
+  ) {
+    for (i = 0; i < thisWeekPlayers.length; i++) {
+      ovr(thisWeekPlayers[i]);
+    }
+    thisWeekPlayers.sort((a, b) => (a.ovr > b.ovr ? -1 : 1));
 
-      let team1 = shuffledplayers;
-      let team2 = shuffledplayers.splice(0, shuffledplayers.length / 2);
+    do {
+      firstToEnd(thisWeekPlayers);
+    } while (firstToEnd(thisWeekPlayers) != undefined);
 
-      secSelect.innerHTML = `<html lang="en" id=secTwoTeams >
+    do {
+      if (
+        firstToEnd(thisWeekPlayers) === undefined &&
+        x != thisWeekPlayers.length - 1
+      ) {
+        function pointer(listn) {
+          x = x + 1;
+          i = x + 1;
+
+          return listn;
+        }
+        pointer(thisWeekPlayers);
+        firstToEnd(thisWeekPlayers);
+      }
+    } while (x != thisWeekPlayers.length - 1 && thisWeekPlayers.length != 0);
+
+    if (thisWeekPlayers != 0) {
+      teamfair1.push(thisWeekPlayers[0]);
+      thisWeekPlayers.splice(0, 1);
+
+      if (thisWeekPlayers != 0) {
+        teamfair2.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+      }
+
+      if (thisWeekPlayers != 0) {
+        teamfair2.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+      }
+
+      if (thisWeekPlayers != 0) {
+        teamfair1.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+      }
+      if (thisWeekPlayers != 0) {
+        teamfair1.push(thisWeekPlayers[0]);
+        thisWeekPlayers.splice(0, 1);
+      }
+    }
+    console.log(equalizer(teamfair1));
+    console.log(equalizer(teamfair2));
+
+    let team1 = teamfair1;
+    let team2 = teamfair2;
+
+    secSelect.innerHTML = `<html lang="en" id=secTwoTeams >
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <link rel="stylesheet" href="styleTwoTeams.css" />
+      <title>Wednesday</title>
+    </head>
+    <body>
+      <header>
+        <h1>We have two balanced teams ready for battle!</h1>
+        <p class="credit">By Moe</p>
+        <label for="check"><img src="/src/img/Sound Off.png" alt="Sound Logo" class="soundLogo" id="onoff" onclick="Play()"></label>
+        <audio class="audio" src="/src/msc/Show.mp3" type="audio" loop=""></audio>
+        <input type="checkbox" class="checkb" id="check"">
+        <section class="players" id="secPick">
+      </header>
+      <main>
+       
+        <!-- /////////////////////////////PICKED PLAYERS/////////////////////////////// -->
+  
+        <section class="twoTeams">
+          <div class="lineup">
+    
+          <div class="team__container">
+          
+            
+            <p class="team__text">Team 1</p>
+            
+            <div class="team__players" id="t1p">
+            
+              <div class="lineup__box">
+                <img
+                  src="src/img/lineup/${team1[0].name}.png"
+                  alt="Add Player"
+                  class="lineup__photo_first"
+                />
+                <p class="playername-first">${team1[0].name}</p>
+                </div>
+                
+                
+                </div>
+             
+            </div>
+            
+          </div>
+  
+          <div class="lineup">
+          <div class="team__container">
+            <p class="team__text">Team 2</p>
+            
+            <div class="team__players" id="t2p">
+            
+              <div class="lineup__box">
+                <img
+                  src="src/img/lineup/${team2[0].name}.png"
+                  alt="Add Player"
+                  class="lineup__photo_first"
+                />
+                <p class="playername-first">${team2[0].name}</p>
+              </div>
+
+             
+            </div>
+          </div>
+         </div>
+  
+  
+  
+        </section>
+               
+        <div class="btn__container">
+          <button class="btn-main btn" onclick="backToMain()">Back</button>
+          <button class="btn-main btn">Again</button>
+      </main>
+    </body>
+  </html>
+  `;
+
+    const t1p = document.getElementById("t1p");
+
+    for (let i = 1; i < team1.length; i++) {
+      const addToT1p = `<div class="lineup__box">
+      <img
+        src="src/img/lineup/${team1[i].name}.png"
+        alt="Add Player"
+        class="lineup__photo-rest"
+      />
+      <p class="playername-rest">${team1[i].name}</p>
+    </div>`;
+      t1p.insertAdjacentHTML("beforeend", addToT1p);
+    }
+    for (let i = 1; i < team2.length; i++) {
+      const t2p = document.getElementById("t2p");
+
+      const addToT2p = `<div class="lineup__box">
+      <img
+        src="src/img/lineup/${team2[i].name}.png"
+        alt="Add Player"
+        class="lineup__photo-rest"
+      />
+      <p class="playername-rest">${team2[i].name}</p>
+    </div>`;
+      t2p.insertAdjacentHTML("beforeend", addToT2p);
+    }
+  }
+  /////////////SECTION////////THREE TEAMS FAIR///////////////////////////////////////
+  else if (
+    document.getElementById("ar3").style.opacity === "1" &&
+    document.getElementById("ar2").style.opacity === "1"
+  ) {
+    for (i = 0; i < thisWeekPlayers.length; i++) {
+      ovr(thisWeekPlayers[i]);
+    }
+    thisWeekPlayers.sort((a, b) => (a.ovr > b.ovr ? -1 : 1));
+
+    for (let i = 0; i < thisWeekPlayers.length / 6; i++) {
+      teamfair1.push(thisWeekPlayers[0]);
+      thisWeekPlayers.splice(0, 1);
+      teamfair2.push(thisWeekPlayers[0]);
+      thisWeekPlayers.splice(0, 1);
+      teamfair3.push(thisWeekPlayers[0]);
+      thisWeekPlayers.splice(0, 1);
+      teamfair3.push(thisWeekPlayers[0]);
+      thisWeekPlayers.splice(0, 1);
+      teamfair2.push(thisWeekPlayers[0]);
+      thisWeekPlayers.splice(0, 1);
+      teamfair1.push(thisWeekPlayers[0]);
+      thisWeekPlayers.splice(0, 1);
+    }
+
+    if (thisWeekPlayers.length != 0) {
+      teamfair1.push(thisWeekPlayers[0]);
+      thisWeekPlayers.splice(0, 1);
+    }
+    if (thisWeekPlayers.length != 0) {
+      teamfair2.push(thisWeekPlayers[0]);
+      thisWeekPlayers.splice(0, 1);
+    }
+    if (thisWeekPlayers.length != 0) {
+      teamfair3.push(thisWeekPlayers[0]);
+      thisWeekPlayers.splice(0, 1);
+    }
+    if (thisWeekPlayers.length != 0) {
+      teamfair3.push(thisWeekPlayers[0]);
+      thisWeekPlayers.splice(0, 1);
+    }
+    if (thisWeekPlayers.length != 0) {
+      teamfair2.push(thisWeekPlayers[0]);
+      thisWeekPlayers.splice(0, 1);
+    }
+
+    let team1 = teamfair1;
+    let team2 = teamfair2;
+    let team3 = teamfair3;
+    console.log(equalizer(teamfair1));
+    console.log(equalizer(teamfair2));
+    console.log(equalizer(teamfair3));
+
+    secSelect.innerHTML = `<html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="styleThreeTeams.css" />
+        <title>Wednesday!</title>
+      </head>
+      <body>
+        <header>
+          <h1>We have three Balanced teams ready for battle!</h1>
+          <p class="credit">By Moe</p>
+          <label for="check"><img src="/src/img/Sound Off.png" alt="Sound Logo" class="soundLogo" id="onoff" onclick="Play()"></label>
+          <audio class="audio" src="/src/msc/Show.mp3" type="audio" loop=""></audio>
+          <input type="checkbox" class="checkb" id="check"">
+          <section class="players" id="secPick">
+        </header>
+        <main>
+         
+          <!-- /////////////////////////////PICKED PLAYERS/////////////////////////////// -->
+    
+          <section class="players__selected">
+            <div class="lineup">
+              <div class="team__container">
+                <p class="team__text">Team 1</p>
+                
+                <div class="playersntextcont">
+      
+                <div class="team__players" id="t1p">
+                
+                  <div class="lineup__box">
+                    <img
+                      src="src/img/lineup/${team1[0].name}.png "
+                      alt="Add Player"
+                      class="lineup__photo_first"
+                    />
+                  </div>
+                  
+                
+              
+      
+                </div>
+                <div class="plnmbox" id="t1txt">          
+                <p class="textbox">${team1[0].name}</p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+    
+    
+            <div class="lineup">
+              <div class="team__container">
+                <p class="team__text">Team 2</p>
+                
+                <div class="playersntextcont">
+      
+                <div class="team__players" id="t2p">
+                
+                  <div class="lineup__box">
+                    <img
+                      src="src/img/lineup/${team2[0].name}.png"
+                      alt="Add Player"
+                      class="lineup__photo_first"
+                    />
+                  </div>
+                  
+      
+      
+                </div>
+                <div class="plnmbox" id="t2txt">          
+                  <p class="textbox">${team2[0].name}</p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+    
+
+    
+           <div class="lineup">
+            <div class="team__container">
+              <p class="team__text">Team 3</p>
+              
+              <div class="playersntextcont">
+    
+              <div class="team__players" id="t3p">
+              
+                <div class="lineup__box">
+                  <img
+                    src="src/img/lineup/${team3[0].name}.png"
+                    alt="Add Player"
+                    class="lineup__photo_first"
+                  />
+                </div>
+                
+
+                
+        
+              </div>
+              <div class="plnmbox" id= "t3txt">          
+                <p class="textbox">${team3[0].name}</p>
+ 
+                </div>
+              </div>
+            </div>
+          </div>
+           
+        </section>
+        
+        <div class="btn__container">
+          <button class="btn-main btn" onclick="backToMain()">Back</button>
+          <button class="btn-main btn" onclick="again()">Again</button>
+        </main>
+      </body>
+      </html>
+    
+    `;
+
+    const t1p = document.getElementById("t1p");
+    const t1px = document.getElementById("t1txt");
+
+    for (let i = 1; i < team1.length; i++) {
+      const addToT1p = `<div class="lineup__box">
+        <img
+          src="src/img/lineup/${team1[i].name}.png"
+          alt="Add Player"
+          class="lineup__photo-rest"
+        />
+
+      </div>`;
+      t1p.insertAdjacentHTML("beforeend", addToT1p);
+      const addtxt1 = `<p class="textbox">${team1[i].name}</p>`;
+      t1px.insertAdjacentHTML("beforeend", addtxt1);
+    }
+
+    const t2p = document.getElementById("t2p");
+    const t2px = document.getElementById("t2txt");
+
+    for (let i = 1; i < team2.length; i++) {
+      const addToT2p = `<div class="lineup__box">
+        <img
+          src="src/img/lineup/${team2[i].name}.png"
+          alt="Add Player"
+          class="lineup__photo-rest"
+        />
+
+      </div>`;
+      t2p.insertAdjacentHTML("beforeend", addToT2p);
+      const addtxt2 = `<p class="textbox">${team2[i].name}</p>`;
+      t2px.insertAdjacentHTML("beforeend", addtxt2);
+    }
+    const t3p = document.getElementById("t3p");
+    const t3px = document.getElementById("t3txt");
+
+    for (let i = 1; i < team3.length; i++) {
+      const addToT3p = `<div class="lineup__box">
+        <img
+          src="src/img/lineup/${team3[i].name}.png"
+          alt="Add Player"
+          class="lineup__photo-rest"
+        />
+  
+      </div>`;
+      t3p.insertAdjacentHTML("beforeend", addToT3p);
+      const addtxt3 = `<p class="textbox">${team3[i].name}</p>`;
+      t3px.insertAdjacentHTML("beforeend", addtxt3);
+    }
+  }
+
+  //////////////////////////////SECTION////TWO TEAMS RANDOM/////////////////////////
+  else if (
+    document.getElementById("ar1").style.opacity === "1" &&
+    document.getElementById("ar4").style.opacity === "1"
+  ) {
+    let shuffledplayers = shuffle(thisWeekPlayers);
+
+    let team1 = shuffledplayers;
+    let team2 = shuffledplayers.splice(0, shuffledplayers.length / 2);
+
+    secSelect.innerHTML = `<html lang="en" id=secTwoTeams >
       <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -374,12 +825,12 @@ function start() {
     </html>
     `;
 
-      console.log("random");
-      console.log("twoteams");
-      const t1p = document.getElementById("t1p");
+    console.log("random");
+    console.log("twoteams");
+    const t1p = document.getElementById("t1p");
 
-      for (let i = 1; i < team1.length; i++) {
-        const addToT1p = `<div class="lineup__box">
+    for (let i = 1; i < team1.length; i++) {
+      const addToT1p = `<div class="lineup__box">
         <img
           src="src/img/lineup/${team1[i].name}.png"
           alt="Add Player"
@@ -387,12 +838,12 @@ function start() {
         />
         <p class="playername-rest">${team1[i].name}</p>
       </div>`;
-        t1p.insertAdjacentHTML("beforeend", addToT1p);
-      }
-      for (let i = 1; i < team2.length; i++) {
-        const t2p = document.getElementById("t2p");
+      t1p.insertAdjacentHTML("beforeend", addToT1p);
+    }
+    for (let i = 1; i < team2.length; i++) {
+      const t2p = document.getElementById("t2p");
 
-        const addToT2p = `<div class="lineup__box">
+      const addToT2p = `<div class="lineup__box">
         <img
           src="src/img/lineup/${team2[i].name}.png"
           alt="Add Player"
@@ -400,22 +851,25 @@ function start() {
         />
         <p class="playername-rest">${team2[i].name}</p>
       </div>`;
-        t2p.insertAdjacentHTML("beforeend", addToT2p);
-      }
-    } else {
-      console.log("random");
-      console.log("threeteams");
+      t2p.insertAdjacentHTML("beforeend", addToT2p);
+    }
+  }
 
-      let shuffledplayers = shuffle(thisWeekPlayers);
+  //////////////////////////////SECTION////THREE TEAMS RANDOM/////////////////////////
+  else {
+    console.log("random");
+    console.log("threeteams");
 
-      let team1 = shuffledplayers.splice(
-        0,
-        Math.ceil(shuffledplayers.length / 3)
-      );
-      let team2 = shuffledplayers.splice(0, team1.length);
-      let team3 = shuffledplayers;
+    let shuffledplayers = shuffle(thisWeekPlayers);
 
-      secSelect.innerHTML = `<html lang="en">
+    let team1 = shuffledplayers.splice(
+      0,
+      Math.ceil(shuffledplayers.length / 3)
+    );
+    let team2 = shuffledplayers.splice(0, team1.length);
+    let team3 = shuffledplayers;
+
+    secSelect.innerHTML = `<html lang="en">
       <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -536,11 +990,11 @@ function start() {
     
     `;
 
-      const t1p = document.getElementById("t1p");
-      const t1px = document.getElementById("t1txt");
+    const t1p = document.getElementById("t1p");
+    const t1px = document.getElementById("t1txt");
 
-      for (let i = 1; i < team1.length; i++) {
-        const addToT1p = `<div class="lineup__box">
+    for (let i = 1; i < team1.length; i++) {
+      const addToT1p = `<div class="lineup__box">
         <img
           src="src/img/lineup/${team1[i].name}.png"
           alt="Add Player"
@@ -548,16 +1002,16 @@ function start() {
         />
 
       </div>`;
-        t1p.insertAdjacentHTML("beforeend", addToT1p);
-        const addtxt1 = `<p class="textbox">${team1[i].name}</p>`;
-        t1px.insertAdjacentHTML("beforeend", addtxt1);
-      }
+      t1p.insertAdjacentHTML("beforeend", addToT1p);
+      const addtxt1 = `<p class="textbox">${team1[i].name}</p>`;
+      t1px.insertAdjacentHTML("beforeend", addtxt1);
+    }
 
-      const t2p = document.getElementById("t2p");
-      const t2px = document.getElementById("t2txt");
+    const t2p = document.getElementById("t2p");
+    const t2px = document.getElementById("t2txt");
 
-      for (let i = 1; i < team2.length; i++) {
-        const addToT2p = `<div class="lineup__box">
+    for (let i = 1; i < team2.length; i++) {
+      const addToT2p = `<div class="lineup__box">
         <img
           src="src/img/lineup/${team2[i].name}.png"
           alt="Add Player"
@@ -565,15 +1019,15 @@ function start() {
         />
 
       </div>`;
-        t2p.insertAdjacentHTML("beforeend", addToT2p);
-        const addtxt2 = `<p class="textbox">${team2[i].name}</p>`;
-        t2px.insertAdjacentHTML("beforeend", addtxt2);
-      }
-      const t3p = document.getElementById("t3p");
-      const t3px = document.getElementById("t3txt");
+      t2p.insertAdjacentHTML("beforeend", addToT2p);
+      const addtxt2 = `<p class="textbox">${team2[i].name}</p>`;
+      t2px.insertAdjacentHTML("beforeend", addtxt2);
+    }
+    const t3p = document.getElementById("t3p");
+    const t3px = document.getElementById("t3txt");
 
-      for (let i = 1; i < team3.length; i++) {
-        const addToT3p = `<div class="lineup__box">
+    for (let i = 1; i < team3.length; i++) {
+      const addToT3p = `<div class="lineup__box">
         <img
           src="src/img/lineup/${team3[i].name}.png"
           alt="Add Player"
@@ -581,50 +1035,23 @@ function start() {
         />
   
       </div>`;
-        t3p.insertAdjacentHTML("beforeend", addToT3p);
-        const addtxt3 = `<p class="textbox">${team3[i].name}</p>`;
-        t3px.insertAdjacentHTML("beforeend", addtxt3);
-      }
+      t3p.insertAdjacentHTML("beforeend", addToT3p);
+      const addtxt3 = `<p class="textbox">${team3[i].name}</p>`;
+      t3px.insertAdjacentHTML("beforeend", addtxt3);
     }
   }
-  function seeder() {
-    for (let i = 0; i < thisWeekPlayers.length; i++) {
-      if (thisWeekPlayers[i].seed === 1) {
-        if (!seed1.includes(thisWeekPlayers[i])) {
-          seed1.push(thisWeekPlayers[i]);
-        }
-      } else if (thisWeekPlayers[i].seed === 2) {
-        if (!seed1.includes(thisWeekPlayers[i])) {
-          seed2.push(thisWeekPlayers[i]);
-        }
-      } else if (thisWeekPlayers[i].seed === 3) {
-        if (!seed3.includes(thisWeekPlayers[i])) {
-          seed3.push(thisWeekPlayers[i]);
-        }
-      } else if (thisWeekPlayers[i].seed === 4) {
-        if (!seed4.includes(thisWeekPlayers[i])) {
-          seed4.push(thisWeekPlayers[i]);
-        }
-      } else if (thisWeekPlayers[i].seed === 5) {
-        if (!seed5.includes(thisWeekPlayers[i])) {
-          seed5.push(thisWeekPlayers[i]);
-        }
-      }
-    }
-  }
-  seeder();
 }
 
 //////////////////////////////////////////////////////////////////////////////////
 
 function next() {
   if (document.getElementById("ar2").style.opacity == "1") {
-    if (thisWeekPlayers.length >= 3) {
+    if (thisWeekPlayers.length >= 6) {
       disp.style.display = "none";
       disp1.style.display = "flex";
       document.getElementById("ar3").style.opacity = "1";
     } else {
-      errtxt.innerHTML = "Please select at least 3 players";
+      errtxt.innerHTML = "Please select at least 6 players";
       err.style.display = "flex";
     }
   } else {
