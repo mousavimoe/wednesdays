@@ -91,8 +91,7 @@ function shuffle(array) {
 ///////////////////////////////// BacktoMain//////////////////////////////////////////
 
 function backToMain() {
-  location.replace("/index.html");
-  console.log("sssssssssss");
+  location.replace("index.html");
 }
 ///////////////////////////////////////////////
 
@@ -157,18 +156,18 @@ document.getElementsByClassName(".audio").volume = 0;
 function Play() {
   if (audio.paused) {
     audio.play();
-    document.getElementById("onoff").src = "/src/img/Sound On.png";
+    document.getElementById("onoff").src = "src/img/Sound On.png";
   } else {
     audio.pause();
-    document.getElementById("onoff").src = "/src/img/Sound Off.png";
+    document.getElementById("onoff").src = "src/img/Sound Off.png";
   }
 }
 
 var selectSoundEffect = new Audio();
-selectSoundEffect.src = "/src/msc/Hover Effect.mp3";
+selectSoundEffect.src = "src/msc/Hover Effect.mp3";
 
 var deselectSoundEffect = new Audio();
-deselectSoundEffect.src = "/src/msc/Select.mp3";
+deselectSoundEffect.src = "src/msc/Select.mp3";
 
 ////////////////////////////////////////////////////////////////////////////////////////
 const teamPlayerss = document.querySelector(".selected__players");
@@ -287,10 +286,7 @@ function sbmt() {
   var sbmt = document.getElementsByClassName("selected__players");
   document.getElementById("ar1").style.opacity = "1";
 
-  if (
-    document.getElementById("btn").textContent == "Submit!" &&
-    thisWeekPlayers.length >= 2
-  ) {
+  if (thisWeekPlayers.length >= 2) {
     setTimeout(function () {
       disp.style.display = "flex";
     }, 500);
@@ -922,6 +918,14 @@ function start() {
                 <p class="team__text">Team 1</p>
                 
                 <div class="playersntextcont">
+                <div class="plnmbox">  
+                <p class="textbox">Def:${def(team1)}/10</p>
+                <p class="textbox">Spd:${speed(team1)}/10</p>
+                <p class="textbox">Shoot:${shoot(team1)}/10</p>
+                <p class="textbox">Pass:${pass(team1)}/10</p>
+                <p class="textbox">Drbl:${tech(team1)}/10</p>
+                <p class="textbox">OVERALL:${equalizer(team1)}</p>
+                </div>
       
                 <div class="team__players" id="t1p">
                 
@@ -952,6 +956,14 @@ function start() {
                 <p class="team__text">Team 2</p>
                 
                 <div class="playersntextcont">
+                <div class="plnmbox">  
+                <p class="textbox">Def:${def(team2)}/10</p>
+                <p class="textbox">Spd:${speed(team2)}/10</p>
+                <p class="textbox">Shoot:${shoot(team2)}/10</p>
+                <p class="textbox">Pass:${pass(team2)}/10</p>
+                <p class="textbox">Drbl:${tech(team2)}/10</p>
+                <p class="textbox">OVERALL:${equalizer(team2)}</p>
+                </div>
       
                 <div class="team__players" id="t2p">
                 
@@ -982,6 +994,14 @@ function start() {
               <p class="team__text">Team 3</p>
               
               <div class="playersntextcont">
+              <div class="plnmbox">  
+              <p class="textbox">Def:${def(team3)}/10</p>
+              <p class="textbox">Spd:${speed(team3)}/10</p>
+              <p class="textbox">Shoot:${shoot(team3)}/10</p>
+              <p class="textbox">Pass:${pass(team3)}/10</p>
+              <p class="textbox">Drbl:${tech(team3)}/10</p>
+              <p class="textbox">OVERALL:${equalizer(team3)}</p>
+              </div>
     
               <div class="team__players" id="t3p">
               
