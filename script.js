@@ -591,7 +591,15 @@ function start() {
                 <p class="team__text">Team 1</p>
                 
                 <div class="playersntextcont">
-      
+                <div class="plnmbox">  
+                <p class="textbox">Def:${def(teamfair1)}/10</p>
+                <p class="textbox">Spd:${speed(teamfair1)}/10</p>
+                <p class="textbox">Shoot:${shoot(teamfair1)}/10</p>
+                <p class="textbox">Pass:${pass(teamfair1)}/10</p>
+                <p class="textbox">Drbl:${tech(teamfair1)}/10</p>
+                <p class="textbox">OVERALL:${equalizer(teamfair1)}</p>
+                </div>
+
                 <div class="team__players" id="t1p">
                 
                   <div class="lineup__box">
@@ -601,14 +609,16 @@ function start() {
                       class="lineup__photo_first"
                     />
                   </div>
+
+                  
                   
                 
-              
-      
-                </div>
-                <div class="plnmbox" id="t1txt">          
-                <p class="textbox">${team1[0].name}</p>
-
+                  
+                  
+                  </div>
+                  <div class="plnmbox" id="t1txt">          
+                  <p class="textbox">${team1[0].name}</p>
+                  
                   </div>
                 </div>
               </div>
@@ -621,6 +631,14 @@ function start() {
                 <p class="team__text">Team 2</p>
                 
                 <div class="playersntextcont">
+                <div class="plnmbox">  
+                <p class="textbox">Def:${def(teamfair2)}/10</p>
+                <p class="textbox">Spd:${speed(teamfair2)}/10</p>
+                <p class="textbox">Shoot:${shoot(teamfair2)}/10</p>
+                <p class="textbox">Pass:${pass(teamfair2)}/10</p>
+                <p class="textbox">Drbl:${tech(teamfair2)}/10</p>
+                <p class="textbox">OVERALL:${equalizer(teamfair2)}</p>
+                </div>
       
                 <div class="team__players" id="t2p">
                 
@@ -651,6 +669,14 @@ function start() {
               <p class="team__text">Team 3</p>
               
               <div class="playersntextcont">
+              <div class="plnmbox">  
+              <p class="textbox">Def:${def(teamfair3)}/10</p>
+              <p class="textbox">Spd:${speed(teamfair3)}/10</p>
+              <p class="textbox">Shoot:${shoot(teamfair3)}/10</p>
+              <p class="textbox">Pass:${pass(teamfair3)}/10</p>
+              <p class="textbox">Drbl:${tech(teamfair3)}/10</p>
+              <p class="textbox">OVERALL:${equalizer(teamfair3)}</p>
+              </div>
     
               <div class="team__players" id="t3p">
               

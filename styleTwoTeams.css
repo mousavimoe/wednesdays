@@ -76,7 +76,7 @@ h1 {
 }
 .team__container {
   text-align: center;
-  width: 50vw;
+  width: auto;
   height: 100%;
   overflow: hidden;
 }
