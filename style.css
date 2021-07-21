@@ -601,6 +601,9 @@ h1 {
     height: 40vh;
   }
 
+  .player-card{
+    display: none;
+  }
   .soundLogo {
     width: 9rem;
     height: auto;
