@@ -403,113 +403,199 @@ function start() {
 
     let team1 = teamfair1;
     let team2 = teamfair2;
-
-    secSelect.innerHTML = `<html lang="en" id=secTwoTeams >
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-      <link rel="stylesheet" href="styleTwoTeams.css" />
-      <title>Wednesday</title>
-    </head>
-    <body>
-      <header>
-        <h1>We have two balanced teams!</h1>
-        <p class="credit">By Moe</p>
-        <label for="check"><img src="/src/img/Sound Off.png" alt="Sound Logo" class="soundLogo" id="onoff" onclick="Play()"></label>
-        <audio class="audio" src="/src/msc/Show.mp3" type="audio" loop=""></audio>
-        <input type="checkbox" class="checkb" id="check"">
-        <section class="players" id="secPick">
-      </header>
-      <main>
-       
-        <!-- /////////////////////////////PICKED PLAYERS/////////////////////////////// -->
-  
-        <section class="twoTeams">
-          <div class="lineup">
+    secSelect.innerHTML = `<html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="styleTeams.css" />
+        <title>Wednesday!</title>
+      </head>
+      <body>
+        <header>
+          <h1>We have three Balanced teams!</h1>
+          <p class="credit">By Moe</p>
+          <label for="check"><img src="/src/img/Sound Off.png" alt="Sound Logo" class="soundLogo" id="onoff" onclick="Play()"></label>
+          <audio class="audio" src="/src/msc/Show.mp3" type="audio" loop=""></audio>
+          <input type="checkbox" class="checkb" id="check"">
+          <section class="players" id="secPick">
+        </header>
+        <main>
+         
+          <!-- /////////////////////////////PICKED PLAYERS/////////////////////////////// -->
     
-          <div class="team__container">
-          
-            
-            <p class="team__text">Team 1</p>
-            
-            <div class="team__players" id="t1p">
-            
-              <div class="lineup__box">
-                <img
-                  src="src/img/lineup/${team1[0].name}.png"
-                  alt="Add Player"
-                  class="lineup__photo_first"
-                />
-                <p class="playername-first">${team1[0].name}</p>
-                </div>
+          <section class="players__selected">
+            <div class="lineup">
+              <div class="team__container">
+                <p class="team__text">Team 1</p>
                 
-                
-                </div>
-             
-            </div>
-            
-          </div>
-  
-          <div class="lineup">
-          <div class="team__container">
-            <p class="team__text">Team 2</p>
-            
-            <div class="team__players" id="t2p">
-            
-              <div class="lineup__box">
-                <img
-                  src="src/img/lineup/${team2[0].name}.png"
-                  alt="Add Player"
-                  class="lineup__photo_first"
-                />
-                <p class="playername-first">${team2[0].name}</p>
-              </div>
+                <div class="playersntextcont">
+                <div class="skillbox"> 
 
-             
+                <p class="textbox"><div class="tbar">DEF: <div class="barbox">${bar.repeat(
+                  def(team1)
+                )}${empbar.repeat(10 - def(team1))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">SPD: <div class="barbox">${bar.repeat(
+                  speed(team1)
+                )}${empbar.repeat(10 - speed(team1))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">SHT: <div class="barbox">${bar.repeat(
+                  shoot(team1)
+                )}${empbar.repeat(10 - shoot(team1))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">PAS: <div class="barbox">${bar.repeat(
+                  pass(team1)
+                )}${empbar.repeat(10 - pass(team1))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">DRB: <div class="barbox">${bar.repeat(
+                  tech(team1)
+                )}${empbar.repeat(10 - tech(team1))}</p> </div> </div>
+
+
+
+
+                <p class="textbox">OVERALL:${equalizer(team1)}</p>
+                </div>
+
+                <div class="team__players" id="t1p">
+                
+                  <div class="lineup__box">
+                    <img
+                      src="src/img/lineup/${team1[0].name}.png "
+                      alt="Add Player"
+                      class="lineup__photo_first"
+                    />
+                  </div>
+
+                  
+                  
+                
+                  
+                  
+                  </div>
+                  <div class="plnmbox" id="t1txt">          
+                  <p class="textbox">${team1[0].name}</p>
+                  
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-         </div>
-  
-  
-  
+            
+    
+    
+            <div class="lineup">
+              <div class="team__container">
+                <p class="team__text">Team 2</p>
+                
+                <div class="playersntextcont">
+                <div class="skillbox">  
+                <p class="textbox"><div class="tbar">DEF: <div class="barbox">${bar.repeat(
+                  def(team2)
+                )}${empbar.repeat(10 - def(team2))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">SPD: <div class="barbox">${bar.repeat(
+                  speed(team2)
+                )}${empbar.repeat(10 - speed(team2))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">SHT: <div class="barbox">${bar.repeat(
+                  shoot(team2)
+                )}${empbar.repeat(10 - shoot(team2))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">PAS: <div class="barbox">${bar.repeat(
+                  pass(team2)
+                )}${empbar.repeat(10 - pass(team2))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">DRB: <div class="barbox">${bar.repeat(
+                  tech(team2)
+                )}${empbar.repeat(10 - tech(team2))}</p> </div> </div>
+                <p class="textbox">OVERALL:${equalizer(team2)}</p>
+                </div>
+      
+                <div class="team__players" id="t2p">
+                
+                  <div class="lineup__box">
+                    <img
+                      src="src/img/lineup/${team2[0].name}.png"
+                      alt="Add Player"
+                      class="lineup__photo_first"
+                    />
+                  </div>
+                  
+      
+      
+                </div>
+                <div class="plnmbox" id="t2txt">          
+                  <p class="textbox">${team2[0].name}</p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+           
         </section>
-               
+        
         <div class="btn__container">
           <button class="btn-main btn" onclick="backToMain()">Back</button>
-          <button class="btn-main btn">Again</button>
-      </main>
-    </body>
-  </html>
-  `;
+          <button class="btn-main btn" onclick="again()">Again</button>
+        </main>
+      </body>
+      </html>
+    
+    `;
 
     const t1p = document.getElementById("t1p");
+    const t1px = document.getElementById("t1txt");
 
     for (let i = 1; i < team1.length; i++) {
       const addToT1p = `<div class="lineup__box">
-      <img
-        src="src/img/lineup/${team1[i].name}.png"
-        alt="Add Player"
-        class="lineup__photo-rest"
-      />
-      <p class="playername-rest">${team1[i].name}</p>
-    </div>`;
-      t1p.insertAdjacentHTML("beforeend", addToT1p);
-    }
-    for (let i = 1; i < team2.length; i++) {
-      const t2p = document.getElementById("t2p");
+        <img
+          src="src/img/lineup/${team1[i].name}.png"
+          alt="Add Player"
+          class="lineup__photo-rest"
+        />
 
+      </div>`;
+      t1p.insertAdjacentHTML("beforeend", addToT1p);
+      const addtxt1 = `<p class="textbox">${team1[i].name}</p>`;
+      t1px.insertAdjacentHTML("beforeend", addtxt1);
+    }
+
+    const t2p = document.getElementById("t2p");
+    const t2px = document.getElementById("t2txt");
+
+    for (let i = 1; i < team2.length; i++) {
       const addToT2p = `<div class="lineup__box">
-      <img
-        src="src/img/lineup/${team2[i].name}.png"
-        alt="Add Player"
-        class="lineup__photo-rest"
-      />
-      <p class="playername-rest">${team2[i].name}</p>
-    </div>`;
+        <img
+          src="src/img/lineup/${team2[i].name}.png"
+          alt="Add Player"
+          class="lineup__photo-rest"
+        />
+
+      </div>`;
       t2p.insertAdjacentHTML("beforeend", addToT2p);
+      const addtxt2 = `<p class="textbox">${team2[i].name}</p>`;
+      t2px.insertAdjacentHTML("beforeend", addtxt2);
     }
   }
+
   /////////////SECTION////////THREE TEAMS FAIR///////////////////////////////////////
   else if (
     document.getElementById("ar3").style.opacity === "1" &&
@@ -607,7 +693,7 @@ function start() {
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="styleThreeTeams.css" />
+        <link rel="stylesheet" href="styleTeams.css" />
         <title>Wednesday!</title>
       </head>
       <body>
@@ -881,57 +967,131 @@ function start() {
     let team1 = shuffledplayers;
     let team2 = shuffledplayers.splice(0, shuffledplayers.length / 2);
 
-    secSelect.innerHTML = `<html lang="en" id=secTwoTeams >
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="styleTwoTeams.css" />
-        <title>Wednesday</title>
-      </head>
-      <body>
-        <header>
-          <h1>We have two random teams!</h1>
-          <p class="credit">By Moe</p>
-          <label for="check"><img src="src/img/Sound Off.png" alt="Sound Logo" class="soundLogo" id="onoff" onclick="Play()"></label>
-          <audio class="audio" src="src/msc/Show.mp3" type="audio" loop=""></audio>
-          <input type="checkbox" class="checkb" id="check"">
-          <section class="players" id="secPick">
-        </header>
-        <main>
-         
-          <!-- /////////////////////////////PICKED PLAYERS/////////////////////////////// -->
-    
-          <section class="twoTeams">
-            <div class="lineup">
-    
+    secSelect.innerHTML = `<html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <link rel="stylesheet" href="styleTeams.css" />
+      <title>Wednesday!</title>
+    </head>
+    <body>
+      <header>
+        <h1>We have three Balanced teams!</h1>
+        <p class="credit">By Moe</p>
+        <label for="check"><img src="/src/img/Sound Off.png" alt="Sound Logo" class="soundLogo" id="onoff" onclick="Play()"></label>
+        <audio class="audio" src="/src/msc/Show.mp3" type="audio" loop=""></audio>
+        <input type="checkbox" class="checkb" id="check"">
+        <section class="players" id="secPick">
+      </header>
+      <main>
+       
+        <!-- /////////////////////////////PICKED PLAYERS/////////////////////////////// -->
+  
+        <section class="players__selected">
+          <div class="lineup">
             <div class="team__container">
-    
-              
               <p class="team__text">Team 1</p>
               
+              <div class="playersntextcont">
+              <div class="skillbox"> 
+
+              <p class="textbox"><div class="tbar">DEF: <div class="barbox">${bar.repeat(
+                def(team1)
+              )}${empbar.repeat(10 - def(team1))}</p> </div> </div>
+
+
+
+              <p class="textbox"><div class="tbar">SPD: <div class="barbox">${bar.repeat(
+                speed(team1)
+              )}${empbar.repeat(10 - speed(team1))}</p> </div> </div>
+
+
+
+              <p class="textbox"><div class="tbar">SHT: <div class="barbox">${bar.repeat(
+                shoot(team1)
+              )}${empbar.repeat(10 - shoot(team1))}</p> </div> </div>
+
+
+
+              <p class="textbox"><div class="tbar">PAS: <div class="barbox">${bar.repeat(
+                pass(team1)
+              )}${empbar.repeat(10 - pass(team1))}</p> </div> </div>
+
+
+
+              <p class="textbox"><div class="tbar">DRB: <div class="barbox">${bar.repeat(
+                tech(team1)
+              )}${empbar.repeat(10 - tech(team1))}</p> </div> </div>
+
+
+
+
+              <p class="textbox">OVERALL:${equalizer(team1)}</p>
+              </div>
+
               <div class="team__players" id="t1p">
               
                 <div class="lineup__box">
                   <img
-                    src="src/img/lineup/${team1[0].name}.png"
+                    src="src/img/lineup/${team1[0].name}.png "
                     alt="Add Player"
                     class="lineup__photo_first"
                   />
-                  <p class="playername-first">${team1[0].name}</p>
                 </div>
-   
-    
-                </div>
-               
-              </div>
+
+                
+                
               
+                
+                
+                </div>
+                <div class="plnmbox" id="t1txt">          
+                <p class="textbox">${team1[0].name}</p>
+                
+                </div>
+              </div>
             </div>
-    
-            <div class="lineup">
+          </div>
+          
+  
+  
+          <div class="lineup">
             <div class="team__container">
               <p class="team__text">Team 2</p>
               
+              <div class="playersntextcont">
+              <div class="skillbox">  
+              <p class="textbox"><div class="tbar">DEF: <div class="barbox">${bar.repeat(
+                def(team2)
+              )}${empbar.repeat(10 - def(team2))}</p> </div> </div>
+
+
+
+              <p class="textbox"><div class="tbar">SPD: <div class="barbox">${bar.repeat(
+                speed(team2)
+              )}${empbar.repeat(10 - speed(team2))}</p> </div> </div>
+
+
+
+              <p class="textbox"><div class="tbar">SHT: <div class="barbox">${bar.repeat(
+                shoot(team2)
+              )}${empbar.repeat(10 - shoot(team2))}</p> </div> </div>
+
+
+
+              <p class="textbox"><div class="tbar">PAS: <div class="barbox">${bar.repeat(
+                pass(team2)
+              )}${empbar.repeat(10 - pass(team2))}</p> </div> </div>
+
+
+
+              <p class="textbox"><div class="tbar">DRB: <div class="barbox">${bar.repeat(
+                tech(team2)
+              )}${empbar.repeat(10 - tech(team2))}</p> </div> </div>
+              <p class="textbox">OVERALL:${equalizer(team2)}</p>
+              </div>
+    
               <div class="team__players" id="t2p">
               
                 <div class="lineup__box">
@@ -940,53 +1100,63 @@ function start() {
                     alt="Add Player"
                     class="lineup__photo_first"
                   />
-                  <p class="playername-first">${team2[0].name}</p>
                 </div>
-  
-               
+                
+    
+    
+              </div>
+              <div class="plnmbox" id="t2txt">          
+                <p class="textbox">${team2[0].name}</p>
+
+                </div>
               </div>
             </div>
-           </div>
-    
-    
-    
-          </section>
-                 
-          <div class="btn__container">
-            <button class="btn-main btn" onclick="backToMain()">Back</button>
-            <button class="btn-main btn">Again</button>
-        </main>
-      </body>
+          </div>
+          
+         
+      </section>
+      
+      <div class="btn__container">
+        <button class="btn-main btn" onclick="backToMain()">Back</button>
+        <button class="btn-main btn" onclick="again()">Again</button>
+      </main>
+    </body>
     </html>
-    `;
+  
+  `;
 
-    console.log("random");
-    console.log("twoteams");
     const t1p = document.getElementById("t1p");
+    const t1px = document.getElementById("t1txt");
 
     for (let i = 1; i < team1.length; i++) {
       const addToT1p = `<div class="lineup__box">
-        <img
-          src="src/img/lineup/${team1[i].name}.png"
-          alt="Add Player"
-          class="lineup__photo-rest"
-        />
-        <p class="playername-rest">${team1[i].name}</p>
-      </div>`;
-      t1p.insertAdjacentHTML("beforeend", addToT1p);
-    }
-    for (let i = 1; i < team2.length; i++) {
-      const t2p = document.getElementById("t2p");
+      <img
+        src="src/img/lineup/${team1[i].name}.png"
+        alt="Add Player"
+        class="lineup__photo-rest"
+      />
 
+    </div>`;
+      t1p.insertAdjacentHTML("beforeend", addToT1p);
+      const addtxt1 = `<p class="textbox">${team1[i].name}</p>`;
+      t1px.insertAdjacentHTML("beforeend", addtxt1);
+    }
+
+    const t2p = document.getElementById("t2p");
+    const t2px = document.getElementById("t2txt");
+
+    for (let i = 1; i < team2.length; i++) {
       const addToT2p = `<div class="lineup__box">
-        <img
-          src="src/img/lineup/${team2[i].name}.png"
-          alt="Add Player"
-          class="lineup__photo-rest"
-        />
-        <p class="playername-rest">${team2[i].name}</p>
-      </div>`;
+      <img
+        src="src/img/lineup/${team2[i].name}.png"
+        alt="Add Player"
+        class="lineup__photo-rest"
+      />
+
+    </div>`;
       t2p.insertAdjacentHTML("beforeend", addToT2p);
+      const addtxt2 = `<p class="textbox">${team2[i].name}</p>`;
+      t2px.insertAdjacentHTML("beforeend", addtxt2);
     }
   }
 
@@ -1009,7 +1179,7 @@ function start() {
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="styleThreeTeams.css" />
+        <link rel="stylesheet" href="styleTeams.css" />
         <title>Wednesday!</title>
       </head>
       <body>
