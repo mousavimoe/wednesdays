@@ -11,23 +11,23 @@ class Player {
   }
 }
 
-const mohamad = new Player("moe", 8, 6, 10, 10, 10);
-const keshavarz = new Player("keshavarz", 10, 5.5, 9, 8, 8);
-const bahram = new Player("bahram", 4, 2, 5, 9, 7.5);
+const mohamad = new Player("moe", 10, 10, 10, 10, 10);
+const keshavarz = new Player("keshavarz", 10, 5, 9, 8, 8);
+const bahram = new Player("bahram", 7, 5, 5, 7, 6);
 const bahman = new Player("bahman", 4, 5, 8, 9, 10);
-const rajab = new Player("rajab", 2, 2, 5, 9, 4.5);
-const ehsan = new Player("ehsan", 8, 5, 8.5, 7, 5);
-const navid = new Player("navid", 6.5, 5, 7.5, 7, 5);
-const shahab = new Player("shahab", 8, 5, 6.5, 6, 6);
+const rajab = new Player("rajab", 2, 2, 5, 9, 4);
+const ehsan = new Player("ehsan", 8, 5, 8, 7, 5);
+const navid = new Player("navid", 6, 5, 7, 7, 5);
+const shahab = new Player("shahab", 8, 5, 6, 6, 6);
 const mahmudi = new Player("mahmudi", 7, 10, 8, 7, 6);
-const rasool = new Player("rasool", 5, 2, 8, 9, 9.5);
+const rasool = new Player("rasool", 5, 2, 8, 9, 9);
 const mehrdad = new Player("mehrdad", 5, 7, 6, 5, 8);
-const mehrshad = new Player("mehrshad", 7, 7, 8.5, 8, 8);
-const iman = new Player("iman", 5, 5, 7.5, 7, 8);
-const hamidian = new Player("hamidian", 3, 3, 3, 3, 3);
-const payam = new Player("payam", 7, 6, 9.5, 7.5, 7);
-const farahani = new Player("farahani", 4, 6.5, 8, 8, 7.5);
-const mamul = new Player("mamul", 6, 6, 8, 7, 6.5);
+const mehrshad = new Player("mehrshad", 7, 7, 8, 8, 8);
+const iman = new Player("iman", 5, 5, 7, 7, 8);
+const hamidian = new Player("hamidian", 6, 3, 2, 2, 2);
+const payam = new Player("payam", 7, 6, 9, 7, 7);
+const farahani = new Player("farahani", 4, 6, 8, 8, 7);
+const mamul = new Player("mamul", 6, 6, 8, 7, 6);
 const unknown = new Player("unknown");
 
 const allPlayers = [
@@ -51,6 +51,7 @@ const allPlayers = [
   unknown,
 ];
 
+const skillcard = document.getElementById("plcard");
 const bar = "█";
 const empbar = "▒";
 
@@ -195,6 +196,23 @@ function selectedId(pid) {
         class="lineup__photo_first"
       />
     </div>`;
+    document.getElementById("plc").src = `src/img/lineup/${pid.id}.png`;
+    document.getElementById("cardname").innerHTML = `${pid.id}`;
+    document.getElementById("carddef").innerHTML = `${bar.repeat(
+      obj.defence
+    )}${empbar.repeat(10 - obj.defence)}`;
+    document.getElementById("cardspeed").innerHTML = `${bar.repeat(
+      obj.speed
+    )}${empbar.repeat(10 - obj.speed)}`;
+    document.getElementById("cardshoot").innerHTML = `${bar.repeat(
+      obj.shoot
+    )}${empbar.repeat(10 - obj.shoot)}`;
+    document.getElementById("cardpass").innerHTML = `${bar.repeat(
+      obj.pass
+    )}${empbar.repeat(10 - obj.pass)}`;
+    document.getElementById("cardtech").innerHTML = `${bar.repeat(
+      obj.tech
+    )}${empbar.repeat(10 - obj.tech)}`;
     teamPlayerss.insertAdjacentHTML("beforeend", addPlayer);
 
     thisWeekPlayers.push(obj);
@@ -219,6 +237,23 @@ function selectedId(pid) {
         class="lineup__photo_first"
       />
     </div>`;
+    document.getElementById("plc").src = `src/img/lineup/${pid.id}.png`;
+    document.getElementById("cardname").innerHTML = `${pid.id}`;
+    document.getElementById("carddef").innerHTML = `${bar.repeat(
+      obj.defence
+    )}${empbar.repeat(10 - obj.defence)}`;
+    document.getElementById("cardspeed").innerHTML = `${bar.repeat(
+      obj.speed
+    )}${empbar.repeat(10 - obj.speed)}`;
+    document.getElementById("cardshoot").innerHTML = `${bar.repeat(
+      obj.shoot
+    )}${empbar.repeat(10 - obj.shoot)}`;
+    document.getElementById("cardpass").innerHTML = `${bar.repeat(
+      obj.pass
+    )}${empbar.repeat(10 - obj.pass)}`;
+    document.getElementById("cardtech").innerHTML = `${bar.repeat(
+      obj.tech
+    )}${empbar.repeat(10 - obj.tech)}`;
 
     teamPlayerss.insertAdjacentHTML("beforeend", addPlayer1);
 
@@ -247,6 +282,9 @@ function selectedId(pid) {
           class="lineup__photo_first"
         />
       </div>`;
+      document.getElementById("plc").src = `src/img/lineup/Unknown.png`;
+      document.getElementById("cardname").innerHTML = "Unknown";
+
       teamPlayerss.insertAdjacentHTML("afterbegin", addUnknown);
     }
   }
