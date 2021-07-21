@@ -20,7 +20,7 @@ body {
 /* LAYOUT */
 header {
   position: relative;
-  height: 13vh;
+  height: 10vh;
   border-bottom: 7px solid #eee;
 }
 
@@ -34,7 +34,7 @@ main {
 }
 
 .soundLogo {
-  width: 10rem;
+  width: 7rem;
   height: auto;
   cursor: pointer;
   display: block;
@@ -42,7 +42,7 @@ main {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 1.7rem;
   text-align: center;
   position: absolute;
   width: 100%;
@@ -52,25 +52,26 @@ h1 {
 }
 
 .credit {
-  font-size: 0.7rem;
+  font-size: 1rem;
   position: absolute;
   top: 2rem;
   right: 2rem;
 }
 
 .lineup {
-  display: flex;
   justify-content: center;
+
   border-top: 4px solid #eee;
   border-bottom: 4px solid #eee;
+  display: flex;
 }
 .lineup__photo_first {
-  height: 20rem;
+  height: 18.5rem;
   width: auto;
 }
 
 .lineup__photo-rest {
-  height: 20rem;
+  height: 18.5rem;
   width: auto;
   margin-left: -7rem;
 }
@@ -85,29 +86,50 @@ h1 {
 .team__text {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   color: orangered;
 }
 .playersntextcont {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items:flex-start;
+  justify-content: flex-start;
 }
 
 .team__players {
   display: flex;
   justify-content: center;
+  width: 33vw;
+ 
 }
 
 .plnmbox {
-  margin-right: 4rem;
-  margin-left: auto;
+
+  margin-left: 3rem;
   border: 3px solid gray;
   line-height: 2.2rem;
+  width: 9vw;
 }
 
+
+.skillbox {
+  line-height: 2.2rem;
+ 
+}
+
+
+
+.tbar{
+  display: flex;
+  justify-content:center;
+  font-size: 1.2rem;
+  margin-left: .7rem;
+  margin-right: .7rem;
+
+}
+
+
 .textbox {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin: 0.5rem 1rem;
   text-transform: capitalize;
 }
@@ -220,8 +242,7 @@ h1 {
   }
 
   .plnmbox {
-    margin-right: 2rem;
-    margin-left: auto;
+    margin-left: 2rem;
   }
 
   .textbox {
@@ -273,8 +294,8 @@ h1 {
   }
 
   .plnmbox {
-    margin-right: 2rem;
-    margin-left: auto;
+    margin-left: 2rem;
+
   }
 
   .textbox {

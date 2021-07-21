@@ -51,6 +51,9 @@ const allPlayers = [
   unknown,
 ];
 
+const bar = "█";
+const empbar = "▒";
+
 let thisWeekPlayers = [unknown];
 function objtoarr(nameKey, myArray) {
   for (var i = 0; i < myArray.length; i++) {
@@ -594,6 +597,7 @@ function start() {
     let team1 = teamfair1;
     let team2 = teamfair2;
     let team3 = teamfair3;
+
     console.log(equalizer(teamfair1));
     console.log(equalizer(teamfair2));
     console.log(equalizer(teamfair3));
@@ -625,12 +629,39 @@ function start() {
                 <p class="team__text">Team 1</p>
                 
                 <div class="playersntextcont">
-                <div class="plnmbox">  
-                <p class="textbox">Def:${def(teamfair1)}/10</p>
-                <p class="textbox">Spd:${speed(teamfair1)}/10</p>
-                <p class="textbox">Shoot:${shoot(teamfair1)}/10</p>
-                <p class="textbox">Pass:${pass(teamfair1)}/10</p>
-                <p class="textbox">Drbl:${tech(teamfair1)}/10</p>
+                <div class="skillbox"> 
+
+                <p class="textbox"><div class="tbar">DEF: <div class="barbox">${bar.repeat(
+                  def(teamfair1)
+                )}${empbar.repeat(10 - def(teamfair1))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">SPD: <div class="barbox">${bar.repeat(
+                  speed(teamfair1)
+                )}${empbar.repeat(10 - speed(teamfair1))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">SHT: <div class="barbox">${bar.repeat(
+                  shoot(teamfair1)
+                )}${empbar.repeat(10 - shoot(teamfair1))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">PAS: <div class="barbox">${bar.repeat(
+                  pass(teamfair1)
+                )}${empbar.repeat(10 - pass(teamfair1))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">DRB: <div class="barbox">${bar.repeat(
+                  tech(teamfair1)
+                )}${empbar.repeat(10 - tech(teamfair1))}</p> </div> </div>
+
+
+
+
                 <p class="textbox">OVERALL:${equalizer(teamfair1)}</p>
                 </div>
 
@@ -665,12 +696,34 @@ function start() {
                 <p class="team__text">Team 2</p>
                 
                 <div class="playersntextcont">
-                <div class="plnmbox">  
-                <p class="textbox">Def:${def(teamfair2)}/10</p>
-                <p class="textbox">Spd:${speed(teamfair2)}/10</p>
-                <p class="textbox">Shoot:${shoot(teamfair2)}/10</p>
-                <p class="textbox">Pass:${pass(teamfair2)}/10</p>
-                <p class="textbox">Drbl:${tech(teamfair2)}/10</p>
+                <div class="skillbox">  
+                <p class="textbox"><div class="tbar">DEF: <div class="barbox">${bar.repeat(
+                  def(teamfair2)
+                )}${empbar.repeat(10 - def(teamfair2))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">SPD: <div class="barbox">${bar.repeat(
+                  speed(teamfair2)
+                )}${empbar.repeat(10 - speed(teamfair2))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">SHT: <div class="barbox">${bar.repeat(
+                  shoot(teamfair2)
+                )}${empbar.repeat(10 - shoot(teamfair2))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">PAS: <div class="barbox">${bar.repeat(
+                  pass(teamfair2)
+                )}${empbar.repeat(10 - pass(teamfair2))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">DRB: <div class="barbox">${bar.repeat(
+                  tech(teamfair2)
+                )}${empbar.repeat(10 - tech(teamfair2))}</p> </div> </div>
                 <p class="textbox">OVERALL:${equalizer(teamfair2)}</p>
                 </div>
       
@@ -703,12 +756,34 @@ function start() {
               <p class="team__text">Team 3</p>
               
               <div class="playersntextcont">
-              <div class="plnmbox">  
-              <p class="textbox">Def:${def(teamfair3)}/10</p>
-              <p class="textbox">Spd:${speed(teamfair3)}/10</p>
-              <p class="textbox">Shoot:${shoot(teamfair3)}/10</p>
-              <p class="textbox">Pass:${pass(teamfair3)}/10</p>
-              <p class="textbox">Drbl:${tech(teamfair3)}/10</p>
+              <div class="skillbox">  
+              <p class="textbox"><div class="tbar">DEF: <div class="barbox">${bar.repeat(
+                def(teamfair3)
+              )}${empbar.repeat(10 - def(teamfair3))}</p> </div> </div>
+
+
+
+              <p class="textbox"><div class="tbar">SPD: <div class="barbox">${bar.repeat(
+                speed(teamfair3)
+              )}${empbar.repeat(10 - speed(teamfair3))}</p> </div> </div>
+
+
+
+              <p class="textbox"><div class="tbar">SHT: <div class="barbox">${bar.repeat(
+                shoot(teamfair3)
+              )}${empbar.repeat(10 - shoot(teamfair3))}</p> </div> </div>
+
+
+
+              <p class="textbox"><div class="tbar">PAS: <div class="barbox">${bar.repeat(
+                pass(teamfair3)
+              )}${empbar.repeat(10 - pass(teamfair3))}</p> </div> </div>
+
+
+
+              <p class="textbox"><div class="tbar">DRB: <div class="barbox">${bar.repeat(
+                tech(teamfair3)
+              )}${empbar.repeat(10 - tech(teamfair3))}</p> </div> </div>
               <p class="textbox">OVERALL:${equalizer(teamfair3)}</p>
               </div>
     
@@ -956,12 +1031,34 @@ function start() {
                 <p class="team__text">Team 1</p>
                 
                 <div class="playersntextcont">
-                <div class="plnmbox">  
-                <p class="textbox">Def:${def(team1)}/10</p>
-                <p class="textbox">Spd:${speed(team1)}/10</p>
-                <p class="textbox">Shoot:${shoot(team1)}/10</p>
-                <p class="textbox">Pass:${pass(team1)}/10</p>
-                <p class="textbox">Drbl:${tech(team1)}/10</p>
+                <div class="skillbox">  
+                <p class="textbox"><div class="tbar">DEF: <div class="barbox">${bar.repeat(
+                  def(team1)
+                )}${empbar.repeat(10 - def(team1))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">SPD: <div class="barbox">${bar.repeat(
+                  speed(team1)
+                )}${empbar.repeat(10 - speed(team1))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">SHT: <div class="barbox">${bar.repeat(
+                  shoot(team1)
+                )}${empbar.repeat(10 - shoot(team1))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">PAS: <div class="barbox">${bar.repeat(
+                  pass(team1)
+                )}${empbar.repeat(10 - pass(team1))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">DRB: <div class="barbox">${bar.repeat(
+                  tech(team1)
+                )}${empbar.repeat(10 - tech(team1))}</p> </div> </div>
                 <p class="textbox">OVERALL:${equalizer(team1)}</p>
                 </div>
       
@@ -994,12 +1091,34 @@ function start() {
                 <p class="team__text">Team 2</p>
                 
                 <div class="playersntextcont">
-                <div class="plnmbox">  
-                <p class="textbox">Def:${def(team2)}/10</p>
-                <p class="textbox">Spd:${speed(team2)}/10</p>
-                <p class="textbox">Shoot:${shoot(team2)}/10</p>
-                <p class="textbox">Pass:${pass(team2)}/10</p>
-                <p class="textbox">Drbl:${tech(team2)}/10</p>
+                <div class="skillbox">  
+                <p class="textbox"><div class="tbar">DEF: <div class="barbox">${bar.repeat(
+                  def(team2)
+                )}${empbar.repeat(10 - def(team2))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">SPD: <div class="barbox">${bar.repeat(
+                  speed(team2)
+                )}${empbar.repeat(10 - speed(team2))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">SHT: <div class="barbox">${bar.repeat(
+                  shoot(team2)
+                )}${empbar.repeat(10 - shoot(team2))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">PAS: <div class="barbox">${bar.repeat(
+                  pass(team2)
+                )}${empbar.repeat(10 - pass(team2))}</p> </div> </div>
+
+
+
+                <p class="textbox"><div class="tbar">DRB: <div class="barbox">${bar.repeat(
+                  tech(team2)
+                )}${empbar.repeat(10 - tech(team2))}</p> </div> </div>
                 <p class="textbox">OVERALL:${equalizer(team2)}</p>
                 </div>
       
@@ -1032,12 +1151,34 @@ function start() {
               <p class="team__text">Team 3</p>
               
               <div class="playersntextcont">
-              <div class="plnmbox">  
-              <p class="textbox">Def:${def(team3)}/10</p>
-              <p class="textbox">Spd:${speed(team3)}/10</p>
-              <p class="textbox">Shoot:${shoot(team3)}/10</p>
-              <p class="textbox">Pass:${pass(team3)}/10</p>
-              <p class="textbox">Drbl:${tech(team3)}/10</p>
+              <div class="skillbox">  
+              <p class="textbox"><div class="tbar">DEF: <div class="barbox">${bar.repeat(
+                def(team3)
+              )}${empbar.repeat(10 - def(team3))}</p> </div> </div>
+
+
+
+              <p class="textbox"><div class="tbar">SPD: <div class="barbox">${bar.repeat(
+                speed(team3)
+              )}${empbar.repeat(10 - speed(team3))}</p> </div> </div>
+
+
+
+              <p class="textbox"><div class="tbar">SHT: <div class="barbox">${bar.repeat(
+                shoot(team3)
+              )}${empbar.repeat(10 - shoot(team3))}</p> </div> </div>
+
+
+
+              <p class="textbox"><div class="tbar">PAS: <div class="barbox">${bar.repeat(
+                pass(team3)
+              )}${empbar.repeat(10 - pass(team3))}</p> </div> </div>
+
+
+
+              <p class="textbox"><div class="tbar">DRB: <div class="barbox">${bar.repeat(
+                tech(team3)
+              )}${empbar.repeat(10 - tech(team3))}</p> </div> </div>
               <p class="textbox">OVERALL:${equalizer(team3)}</p>
               </div>
     
