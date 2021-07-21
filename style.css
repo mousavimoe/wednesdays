@@ -108,6 +108,8 @@ main {
 
 }
 
+.player-card1{display: none}
+
 
 .textboxcard{
   text-align: center;
@@ -495,6 +497,10 @@ h1 {
     text-align: right;
   }
 
+
+  .players{
+    height: 33vh;
+  }
   .players__container {
     grid-template-columns: repeat(4, 1fr);
     width: 90vw;
@@ -518,6 +524,31 @@ h1 {
 .player-card{
   display: none;
 }
+
+.player-card1{
+  width: 30vw;
+  height: auto;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: #555;
+  display: flex;
+  justify-content: center;
+}
+
+
+ 
+.tbar{
+  font-size: 1.2rem;
+  margin-left: auto;
+  margin-right: auto;
+ justify-content: center;
+  text-align: center;
+
+}
+
+
   .modalbox {
     position: absolute;
     top: 50%;
@@ -601,9 +632,24 @@ h1 {
     height: 40vh;
   }
 
+
+
   .player-card{
     display: none;
   }
+  
+  .player-card1{
+    width: 30vw;
+    height: 12vh;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: #555;
+    display: flex;
+    justify-content: center;
+  }
+  
   .soundLogo {
     width: 9rem;
     height: auto;

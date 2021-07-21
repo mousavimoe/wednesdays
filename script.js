@@ -198,21 +198,48 @@ function selectedId(pid) {
     </div>`;
     document.getElementById("plc").src = `src/img/lineup/${pid.id}.png`;
     document.getElementById("cardname").innerHTML = `${pid.id}`;
+    document.getElementById("cardname1").innerHTML = `${pid.id}`;
+
     document.getElementById("carddef").innerHTML = `${bar.repeat(
       obj.defence
     )}${empbar.repeat(10 - obj.defence)}`;
+
+    document.getElementById("carddef1").innerHTML = `${bar.repeat(
+      obj.defence
+    )}${empbar.repeat(10 - obj.defence)}`;
+
     document.getElementById("cardspeed").innerHTML = `${bar.repeat(
       obj.speed
     )}${empbar.repeat(10 - obj.speed)}`;
+
+    document.getElementById("cardspeed1").innerHTML = `${bar.repeat(
+      obj.speed
+    )}${empbar.repeat(10 - obj.speed)}`;
+
     document.getElementById("cardshoot").innerHTML = `${bar.repeat(
       obj.shoot
     )}${empbar.repeat(10 - obj.shoot)}`;
+
+    document.getElementById("cardshoot1").innerHTML = `${bar.repeat(
+      obj.shoot
+    )}${empbar.repeat(10 - obj.shoot)}`;
+
     document.getElementById("cardpass").innerHTML = `${bar.repeat(
       obj.pass
     )}${empbar.repeat(10 - obj.pass)}`;
+
+    document.getElementById("cardpass1").innerHTML = `${bar.repeat(
+      obj.pass
+    )}${empbar.repeat(10 - obj.pass)}`;
+
     document.getElementById("cardtech").innerHTML = `${bar.repeat(
       obj.tech
     )}${empbar.repeat(10 - obj.tech)}`;
+
+    document.getElementById("cardtech1").innerHTML = `${bar.repeat(
+      obj.tech
+    )}${empbar.repeat(10 - obj.tech)}`;
+
     teamPlayerss.insertAdjacentHTML("beforeend", addPlayer);
 
     thisWeekPlayers.push(obj);
@@ -239,19 +266,45 @@ function selectedId(pid) {
     </div>`;
     document.getElementById("plc").src = `src/img/lineup/${pid.id}.png`;
     document.getElementById("cardname").innerHTML = `${pid.id}`;
+    document.getElementById("cardname1").innerHTML = `${pid.id}`;
+
     document.getElementById("carddef").innerHTML = `${bar.repeat(
       obj.defence
     )}${empbar.repeat(10 - obj.defence)}`;
+
+    document.getElementById("carddef1").innerHTML = `${bar.repeat(
+      obj.defence
+    )}${empbar.repeat(10 - obj.defence)}`;
+
     document.getElementById("cardspeed").innerHTML = `${bar.repeat(
       obj.speed
     )}${empbar.repeat(10 - obj.speed)}`;
+
+    document.getElementById("cardspeed1").innerHTML = `${bar.repeat(
+      obj.speed
+    )}${empbar.repeat(10 - obj.speed)}`;
+
     document.getElementById("cardshoot").innerHTML = `${bar.repeat(
       obj.shoot
     )}${empbar.repeat(10 - obj.shoot)}`;
+
+    document.getElementById("cardshoot1").innerHTML = `${bar.repeat(
+      obj.shoot
+    )}${empbar.repeat(10 - obj.shoot)}`;
+
     document.getElementById("cardpass").innerHTML = `${bar.repeat(
       obj.pass
     )}${empbar.repeat(10 - obj.pass)}`;
+
+    document.getElementById("cardpass1").innerHTML = `${bar.repeat(
+      obj.pass
+    )}${empbar.repeat(10 - obj.pass)}`;
+
     document.getElementById("cardtech").innerHTML = `${bar.repeat(
+      obj.tech
+    )}${empbar.repeat(10 - obj.tech)}`;
+
+    document.getElementById("cardtech1").innerHTML = `${bar.repeat(
       obj.tech
     )}${empbar.repeat(10 - obj.tech)}`;
 
@@ -284,6 +337,46 @@ function selectedId(pid) {
       </div>`;
       document.getElementById("plc").src = `src/img/lineup/Unknown.png`;
       document.getElementById("cardname").innerHTML = "Unknown";
+      document.getElementById("cardname1").innerHTML = "Unknown";
+      document.getElementById("carddef").innerHTML = `${bar.repeat(
+        5
+      )}${empbar.repeat(5)}`;
+
+      document.getElementById("carddef1").innerHTML = `${bar.repeat(
+        5
+      )}${empbar.repeat(5)}`;
+
+      document.getElementById("cardspeed").innerHTML = `${bar.repeat(
+        5
+      )}${empbar.repeat(5)}`;
+
+      document.getElementById("cardspeed1").innerHTML = `${bar.repeat(
+        5
+      )}${empbar.repeat(5)}`;
+
+      document.getElementById("cardshoot").innerHTML = `${bar.repeat(
+        5
+      )}${empbar.repeat(5)}`;
+
+      document.getElementById("cardshoot1").innerHTML = `${bar.repeat(
+        5
+      )}${empbar.repeat(5)}`;
+
+      document.getElementById("cardpass").innerHTML = `${bar.repeat(
+        5
+      )}${empbar.repeat(5)}`;
+
+      document.getElementById("cardpass1").innerHTML = `${bar.repeat(
+        5
+      )}${empbar.repeat(5)}`;
+
+      document.getElementById("cardtech").innerHTML = `${bar.repeat(
+        5
+      )}${empbar.repeat(5)}`;
+
+      document.getElementById("cardtech1").innerHTML = `${bar.repeat(
+        5
+      )}${empbar.repeat(5)}`;
 
       teamPlayerss.insertAdjacentHTML("afterbegin", addUnknown);
     }
