@@ -498,7 +498,7 @@ h1 {
   .players__container {
     grid-template-columns: repeat(4, 1fr);
     width: 90vw;
-    height: 33vh;
+    height: auto;
   }
 
   .lineup__photo_first {
@@ -515,7 +515,9 @@ h1 {
   header {
     height: 15vh;
   }
-
+.player-card{
+  display: none;
+}
   .modalbox {
     position: absolute;
     top: 50%;
