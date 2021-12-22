@@ -11,7 +11,7 @@ class Player {
   }
 }
 
-const mohamad = new Player('moe', 10, 10, 10, 10, 10);
+const mohamad = new Player('moe', 6, 6, 10, 10, 10);
 const keshavarz = new Player('keshavarz', 10, 6, 9, 8, 7);
 const bahram = new Player('bahram', 7, 5, 5, 7, 6);
 const bahman = new Player('bahman', 5, 4, 8, 7, 9);
