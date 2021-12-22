@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 class Player {
   constructor(name, defence, speed, shoot, pass, tech) {
@@ -11,24 +11,28 @@ class Player {
   }
 }
 
-const mohamad = new Player("moe", 10, 10, 10, 10, 10);
-const keshavarz = new Player("keshavarz", 10, 5, 9, 8, 8);
-const bahram = new Player("bahram", 7, 5, 5, 7, 6);
-const bahman = new Player("bahman", 4, 5, 8, 9, 10);
-const rajab = new Player("rajab", 2, 2, 5, 9, 4);
-const ehsan = new Player("ehsan", 8, 5, 8, 7, 5);
-const navid = new Player("navid", 6, 5, 7, 7, 5);
-const shahab = new Player("shahab", 8, 5, 6, 6, 6);
-const mahmudi = new Player("mahmudi", 7, 10, 8, 7, 6);
-const rasool = new Player("rasool", 5, 2, 8, 9, 9);
-const mehrdad = new Player("mehrdad", 5, 7, 6, 5, 8);
-const mehrshad = new Player("mehrshad", 7, 7, 8, 8, 8);
-const iman = new Player("iman", 5, 5, 7, 7, 8);
-const hamidian = new Player("hamidian", 6, 3, 2, 2, 2);
-const payam = new Player("payam", 7, 6, 9, 7, 7);
-const farahani = new Player("farahani", 4, 6, 8, 8, 7);
-const mamul = new Player("mamul", 6, 6, 8, 7, 6);
-const unknown = new Player("unknown");
+const mohamad = new Player('moe', 10, 10, 10, 10, 10);
+const keshavarz = new Player('keshavarz', 10, 6, 9, 8, 7);
+const bahram = new Player('bahram', 7, 5, 5, 7, 6);
+const bahman = new Player('bahman', 5, 4, 8, 7, 9);
+const rajab = new Player('rajab', 2, 2, 5, 9, 4);
+const ehsan = new Player('ehsan', 8, 6, 8, 7, 7);
+const navid = new Player('navid', 6, 5, 7, 7, 5);
+const shahab = new Player('shahab', 8, 5, 6, 6, 6);
+const mahmudi = new Player('mahmudi', 7, 10, 7, 7, 6);
+const rasool = new Player('rasool', 5, 2, 8, 9, 9);
+const mehrdad = new Player('mehrdad', 5, 7, 6, 5, 8);
+const mehrshad = new Player('mehrshad', 7, 7, 8, 8, 8);
+const iman = new Player('iman', 5, 5, 7, 7, 8);
+const hamidian = new Player('hamidian', 6, 3, 2, 2, 2);
+const payam = new Player('payam', 7, 6, 9, 7, 7);
+const farahani = new Player('farahani', 4, 6, 8, 8, 7);
+const mamul = new Player('mamul', 6, 6, 8, 7, 6);
+const ali1 = new Player('ali', 8, 7, 6, 6, 5);
+const ali2 = new Player('ali2', 7, 5, 6, 7, 6);
+const masoud = new Player('masoud', 7, 6, 7, 7, 7);
+const reza = new Player('reza', 7, 7, 7, 7, 7);
+const unknown = new Player('unknown');
 
 const allPlayers = [
   mohamad,
@@ -48,12 +52,16 @@ const allPlayers = [
   payam,
   farahani,
   mamul,
+  ali1,
+  ali2,
+  masoud,
+  reza,
   unknown,
 ];
 
-const skillcard = document.getElementById("plcard");
-const bar = "█";
-const empbar = "▒";
+const skillcard = document.getElementById('plcard');
+const bar = '█';
+const empbar = '▒';
 
 let thisWeekPlayers = [unknown];
 function objtoarr(nameKey, myArray) {
@@ -95,7 +103,7 @@ function shuffle(array) {
 ///////////////////////////////// BacktoMain//////////////////////////////////////////
 
 function backToMain() {
-  location.replace("index.html");
+  location.replace('index.html');
 }
 ///////////////////////////////////////////////
 
@@ -152,41 +160,41 @@ function tech(q) {
 }
 
 //////////////////////////////SECTION//////////// MUSIC//////////////////////////////////////
-var pause = document.querySelector(".pause");
-var audio = document.querySelector(".audio");
+var pause = document.querySelector('.pause');
+var audio = document.querySelector('.audio');
 
-document.getElementsByClassName(".audio").volume = 0;
+document.getElementsByClassName('.audio').volume = 0;
 
 function Play() {
   if (audio.paused) {
     audio.play();
-    document.getElementById("onoff").src = "src/img/Sound On.png";
+    document.getElementById('onoff').src = 'src/img/Sound On.png';
   } else {
     audio.pause();
-    document.getElementById("onoff").src = "src/img/Sound Off.png";
+    document.getElementById('onoff').src = 'src/img/Sound Off.png';
   }
 }
 
 var selectSoundEffect = new Audio();
-selectSoundEffect.src = "src/msc/Hover Effect.mp3";
+selectSoundEffect.src = 'src/msc/Hover Effect.mp3';
 
 var deselectSoundEffect = new Audio();
-deselectSoundEffect.src = "src/msc/Select.mp3";
+deselectSoundEffect.src = 'src/msc/Select.mp3';
 
 ////////////////////////////////////////////////////////////////////////////////////////
-const teamPlayerss = document.querySelector(".selected__players");
-var all = document.getElementsByClassName("players__container");
+const teamPlayerss = document.querySelector('.selected__players');
+var all = document.getElementsByClassName('players__container');
 
 function selectedId(pid) {
   var element = document.getElementById(pid.id);
 
-  element.classList.toggle("blink-1");
-  element.classList.toggle("fade");
+  element.classList.toggle('blink-1');
+  element.classList.toggle('fade');
 
   // provide Index number based on name property of object, element.id = object.name
   var obj = objtoarr(element.id, allPlayers);
 
-  if (element.classList.contains("fade") && thisWeekPlayers.includes(unknown)) {
+  if (element.classList.contains('fade') && thisWeekPlayers.includes(unknown)) {
     selectSoundEffect.play();
     const addPlayer = `
     <div class="lineup__box blink-2" id=${element.id}x>
@@ -196,61 +204,61 @@ function selectedId(pid) {
         class="lineup__photo_first"
       />
     </div>`;
-    document.getElementById("plc").src = `src/img/lineup/${pid.id}.png`;
-    document.getElementById("cardname").innerHTML = `${pid.id}`;
-    document.getElementById("cardname1").innerHTML = `${pid.id}`;
+    document.getElementById('plc').src = `src/img/lineup/${pid.id}.png`;
+    document.getElementById('cardname').innerHTML = `${pid.id}`;
+    document.getElementById('cardname1').innerHTML = `${pid.id}`;
 
-    document.getElementById("carddef").innerHTML = `${bar.repeat(
+    document.getElementById('carddef').innerHTML = `${bar.repeat(
       obj.defence
     )}${empbar.repeat(10 - obj.defence)}`;
 
-    document.getElementById("carddef1").innerHTML = `${bar.repeat(
+    document.getElementById('carddef1').innerHTML = `${bar.repeat(
       obj.defence
     )}${empbar.repeat(10 - obj.defence)}`;
 
-    document.getElementById("cardspeed").innerHTML = `${bar.repeat(
+    document.getElementById('cardspeed').innerHTML = `${bar.repeat(
       obj.speed
     )}${empbar.repeat(10 - obj.speed)}`;
 
-    document.getElementById("cardspeed1").innerHTML = `${bar.repeat(
+    document.getElementById('cardspeed1').innerHTML = `${bar.repeat(
       obj.speed
     )}${empbar.repeat(10 - obj.speed)}`;
 
-    document.getElementById("cardshoot").innerHTML = `${bar.repeat(
+    document.getElementById('cardshoot').innerHTML = `${bar.repeat(
       obj.shoot
     )}${empbar.repeat(10 - obj.shoot)}`;
 
-    document.getElementById("cardshoot1").innerHTML = `${bar.repeat(
+    document.getElementById('cardshoot1').innerHTML = `${bar.repeat(
       obj.shoot
     )}${empbar.repeat(10 - obj.shoot)}`;
 
-    document.getElementById("cardpass").innerHTML = `${bar.repeat(
+    document.getElementById('cardpass').innerHTML = `${bar.repeat(
       obj.pass
     )}${empbar.repeat(10 - obj.pass)}`;
 
-    document.getElementById("cardpass1").innerHTML = `${bar.repeat(
+    document.getElementById('cardpass1').innerHTML = `${bar.repeat(
       obj.pass
     )}${empbar.repeat(10 - obj.pass)}`;
 
-    document.getElementById("cardtech").innerHTML = `${bar.repeat(
+    document.getElementById('cardtech').innerHTML = `${bar.repeat(
       obj.tech
     )}${empbar.repeat(10 - obj.tech)}`;
 
-    document.getElementById("cardtech1").innerHTML = `${bar.repeat(
+    document.getElementById('cardtech1').innerHTML = `${bar.repeat(
       obj.tech
     )}${empbar.repeat(10 - obj.tech)}`;
 
-    teamPlayerss.insertAdjacentHTML("beforeend", addPlayer);
+    teamPlayerss.insertAdjacentHTML('beforeend', addPlayer);
 
     thisWeekPlayers.push(obj);
 
     ///removing unknown player///
     thisWeekPlayers.splice(unknown, 1);
-    document.getElementById("unknown").remove();
+    document.getElementById('unknown').remove();
 
     //////////////////////////////
   } else if (
-    element.classList.contains("fade") &&
+    element.classList.contains('fade') &&
     !thisWeekPlayers.includes(unknown) &&
     !thisWeekPlayers.includes(element.id)
   ) {
@@ -264,54 +272,54 @@ function selectedId(pid) {
         class="lineup__photo_first"
       />
     </div>`;
-    document.getElementById("plc").src = `src/img/lineup/${pid.id}.png`;
-    document.getElementById("cardname").innerHTML = `${pid.id}`;
-    document.getElementById("cardname1").innerHTML = `${pid.id}`;
+    document.getElementById('plc').src = `src/img/lineup/${pid.id}.png`;
+    document.getElementById('cardname').innerHTML = `${pid.id}`;
+    document.getElementById('cardname1').innerHTML = `${pid.id}`;
 
-    document.getElementById("carddef").innerHTML = `${bar.repeat(
+    document.getElementById('carddef').innerHTML = `${bar.repeat(
       obj.defence
     )}${empbar.repeat(10 - obj.defence)}`;
 
-    document.getElementById("carddef1").innerHTML = `${bar.repeat(
+    document.getElementById('carddef1').innerHTML = `${bar.repeat(
       obj.defence
     )}${empbar.repeat(10 - obj.defence)}`;
 
-    document.getElementById("cardspeed").innerHTML = `${bar.repeat(
+    document.getElementById('cardspeed').innerHTML = `${bar.repeat(
       obj.speed
     )}${empbar.repeat(10 - obj.speed)}`;
 
-    document.getElementById("cardspeed1").innerHTML = `${bar.repeat(
+    document.getElementById('cardspeed1').innerHTML = `${bar.repeat(
       obj.speed
     )}${empbar.repeat(10 - obj.speed)}`;
 
-    document.getElementById("cardshoot").innerHTML = `${bar.repeat(
+    document.getElementById('cardshoot').innerHTML = `${bar.repeat(
       obj.shoot
     )}${empbar.repeat(10 - obj.shoot)}`;
 
-    document.getElementById("cardshoot1").innerHTML = `${bar.repeat(
+    document.getElementById('cardshoot1').innerHTML = `${bar.repeat(
       obj.shoot
     )}${empbar.repeat(10 - obj.shoot)}`;
 
-    document.getElementById("cardpass").innerHTML = `${bar.repeat(
+    document.getElementById('cardpass').innerHTML = `${bar.repeat(
       obj.pass
     )}${empbar.repeat(10 - obj.pass)}`;
 
-    document.getElementById("cardpass1").innerHTML = `${bar.repeat(
+    document.getElementById('cardpass1').innerHTML = `${bar.repeat(
       obj.pass
     )}${empbar.repeat(10 - obj.pass)}`;
 
-    document.getElementById("cardtech").innerHTML = `${bar.repeat(
+    document.getElementById('cardtech').innerHTML = `${bar.repeat(
       obj.tech
     )}${empbar.repeat(10 - obj.tech)}`;
 
-    document.getElementById("cardtech1").innerHTML = `${bar.repeat(
+    document.getElementById('cardtech1').innerHTML = `${bar.repeat(
       obj.tech
     )}${empbar.repeat(10 - obj.tech)}`;
 
-    teamPlayerss.insertAdjacentHTML("beforeend", addPlayer1);
+    teamPlayerss.insertAdjacentHTML('beforeend', addPlayer1);
 
     thisWeekPlayers.push(obj);
-  } else if (!element.classList.contains("fade")) {
+  } else if (!element.classList.contains('fade')) {
     deselectSoundEffect.play();
     thisWeekPlayers.splice(thisWeekPlayers.indexOf(obj), 1);
     document.getElementById(`${element.id}x`).remove();
@@ -319,10 +327,10 @@ function selectedId(pid) {
     if (thisWeekPlayers.length === 1) {
       document
         .getElementById(`${thisWeekPlayers[0].name}x`)
-        .classList.remove("lineup__box1");
+        .classList.remove('lineup__box1');
       document
         .getElementById(`${thisWeekPlayers[0].name}x`)
-        .classList.add("lineup__box");
+        .classList.add('lineup__box');
     }
 
     if (thisWeekPlayers.length === 0) {
@@ -335,58 +343,58 @@ function selectedId(pid) {
           class="lineup__photo_first"
         />
       </div>`;
-      document.getElementById("plc").src = `src/img/lineup/Unknown.png`;
-      document.getElementById("cardname").innerHTML = "Unknown";
-      document.getElementById("cardname1").innerHTML = "Unknown";
-      document.getElementById("carddef").innerHTML = `${bar.repeat(
+      document.getElementById('plc').src = `src/img/lineup/Unknown.png`;
+      document.getElementById('cardname').innerHTML = 'Unknown';
+      document.getElementById('cardname1').innerHTML = 'Unknown';
+      document.getElementById('carddef').innerHTML = `${bar.repeat(
         5
       )}${empbar.repeat(5)}`;
 
-      document.getElementById("carddef1").innerHTML = `${bar.repeat(
+      document.getElementById('carddef1').innerHTML = `${bar.repeat(
         5
       )}${empbar.repeat(5)}`;
 
-      document.getElementById("cardspeed").innerHTML = `${bar.repeat(
+      document.getElementById('cardspeed').innerHTML = `${bar.repeat(
         5
       )}${empbar.repeat(5)}`;
 
-      document.getElementById("cardspeed1").innerHTML = `${bar.repeat(
+      document.getElementById('cardspeed1').innerHTML = `${bar.repeat(
         5
       )}${empbar.repeat(5)}`;
 
-      document.getElementById("cardshoot").innerHTML = `${bar.repeat(
+      document.getElementById('cardshoot').innerHTML = `${bar.repeat(
         5
       )}${empbar.repeat(5)}`;
 
-      document.getElementById("cardshoot1").innerHTML = `${bar.repeat(
+      document.getElementById('cardshoot1').innerHTML = `${bar.repeat(
         5
       )}${empbar.repeat(5)}`;
 
-      document.getElementById("cardpass").innerHTML = `${bar.repeat(
+      document.getElementById('cardpass').innerHTML = `${bar.repeat(
         5
       )}${empbar.repeat(5)}`;
 
-      document.getElementById("cardpass1").innerHTML = `${bar.repeat(
+      document.getElementById('cardpass1').innerHTML = `${bar.repeat(
         5
       )}${empbar.repeat(5)}`;
 
-      document.getElementById("cardtech").innerHTML = `${bar.repeat(
+      document.getElementById('cardtech').innerHTML = `${bar.repeat(
         5
       )}${empbar.repeat(5)}`;
 
-      document.getElementById("cardtech1").innerHTML = `${bar.repeat(
+      document.getElementById('cardtech1').innerHTML = `${bar.repeat(
         5
       )}${empbar.repeat(5)}`;
 
-      teamPlayerss.insertAdjacentHTML("afterbegin", addUnknown);
+      teamPlayerss.insertAdjacentHTML('afterbegin', addUnknown);
     }
   }
 }
 
-var disp = document.getElementById("mdl");
-var disp1 = document.getElementById("mdl2");
-var err = document.getElementById("mdlerror");
-const errtxt = document.getElementById("errtxt");
+var disp = document.getElementById('mdl');
+var disp1 = document.getElementById('mdl2');
+var err = document.getElementById('mdlerror');
+const errtxt = document.getElementById('errtxt');
 let teamfair1 = [];
 let teamfair2 = [];
 let teamfair3 = [];
@@ -417,69 +425,69 @@ function firstToEnd(list) {
 }
 
 function sbmt() {
-  var sbmt = document.getElementsByClassName("selected__players");
-  document.getElementById("ar1").style.opacity = "1";
+  var sbmt = document.getElementsByClassName('selected__players');
+  document.getElementById('ar1').style.opacity = '1';
 
   if (thisWeekPlayers.length >= 2) {
     setTimeout(function () {
-      disp.style.display = "flex";
+      disp.style.display = 'flex';
     }, 500);
-    all[0].classList.add("noHover");
-    sbmt[0].classList.add("submitted");
-    sbmt[0].classList.add("blink-1");
-    document.getElementById("btn").style.backgroundColor = "green";
-    document.getElementById("btn").style.color = "white";
+    all[0].classList.add('noHover');
+    sbmt[0].classList.add('submitted');
+    sbmt[0].classList.add('blink-1');
+    document.getElementById('btn').style.backgroundColor = 'green';
+    document.getElementById('btn').style.color = 'white';
   } else {
-    err.style.display = "flex";
-    errtxt.innerHTML = " Please select at least 2 players";
+    err.style.display = 'flex';
+    errtxt.innerHTML = ' Please select at least 2 players';
   }
 }
 
 function bck() {
-  disp.style.display = "none";
+  disp.style.display = 'none';
 
-  all[0].classList.remove("noHover");
-  document.getElementById("btn").style.backgroundColor = "#eee";
-  document.getElementById("btn").style.color = "#222";
-  document.getElementById("ar2").style.opacity = "0";
+  all[0].classList.remove('noHover');
+  document.getElementById('btn').style.backgroundColor = '#eee';
+  document.getElementById('btn').style.color = '#222';
+  document.getElementById('ar2').style.opacity = '0';
 }
 function bck2() {
-  disp1.style.display = "none";
-  disp.style.display = "flex";
-  document.getElementById("ar4").style.opacity = "0";
+  disp1.style.display = 'none';
+  disp.style.display = 'flex';
+  document.getElementById('ar4').style.opacity = '0';
 }
 
 function choice(elem) {
-  var arrow1 = document.getElementById("ar1");
-  var arrow2 = document.getElementById("ar2");
-  if (elem.id == "two") {
-    arrow1.style.opacity = "1";
-    arrow2.style.opacity = "0";
-  } else if (elem.id == "three") {
-    arrow2.style.opacity = "1";
-    arrow1.style.opacity = "0";
+  var arrow1 = document.getElementById('ar1');
+  var arrow2 = document.getElementById('ar2');
+  if (elem.id == 'two') {
+    arrow1.style.opacity = '1';
+    arrow2.style.opacity = '0';
+  } else if (elem.id == 'three') {
+    arrow2.style.opacity = '1';
+    arrow1.style.opacity = '0';
   }
 }
 
 function choice1(elem) {
-  var arrow1 = document.getElementById("ar3");
-  var arrow2 = document.getElementById("ar4");
-  if (elem.id == "fr") {
-    arrow1.style.opacity = "1";
-    arrow2.style.opacity = "0";
-  } else if (elem.id == "rnd") {
-    arrow2.style.opacity = "1";
-    arrow1.style.opacity = "0";
+  var arrow1 = document.getElementById('ar3');
+  var arrow2 = document.getElementById('ar4');
+  if (elem.id == 'fr') {
+    arrow1.style.opacity = '1';
+    arrow2.style.opacity = '0';
+  } else if (elem.id == 'rnd') {
+    arrow2.style.opacity = '1';
+    arrow1.style.opacity = '0';
   }
 }
 
 function start() {
   /////////////SECTION/////////////TWO TEAMS FAIR//////////////////////////////////////////
-  const secSelect = document.getElementById("select");
+  const secSelect = document.getElementById('select');
 
   if (
-    document.getElementById("ar3").style.opacity === "1" &&
-    document.getElementById("ar1").style.opacity === "1"
+    document.getElementById('ar3').style.opacity === '1' &&
+    document.getElementById('ar1').style.opacity === '1'
   ) {
     for (i = 0; i < thisWeekPlayers.length; i++) {
       ovr(thisWeekPlayers[i]);
@@ -692,8 +700,8 @@ function start() {
     
     `;
 
-    const t1p = document.getElementById("t1p");
-    const t1px = document.getElementById("t1txt");
+    const t1p = document.getElementById('t1p');
+    const t1px = document.getElementById('t1txt');
 
     for (let i = 1; i < team1.length; i++) {
       const addToT1p = `<div class="lineup__box">
@@ -704,13 +712,13 @@ function start() {
         />
 
       </div>`;
-      t1p.insertAdjacentHTML("beforeend", addToT1p);
+      t1p.insertAdjacentHTML('beforeend', addToT1p);
       const addtxt1 = `<p class="textbox">${team1[i].name}</p>`;
-      t1px.insertAdjacentHTML("beforeend", addtxt1);
+      t1px.insertAdjacentHTML('beforeend', addtxt1);
     }
 
-    const t2p = document.getElementById("t2p");
-    const t2px = document.getElementById("t2txt");
+    const t2p = document.getElementById('t2p');
+    const t2px = document.getElementById('t2txt');
 
     for (let i = 1; i < team2.length; i++) {
       const addToT2p = `<div class="lineup__box">
@@ -721,16 +729,16 @@ function start() {
         />
 
       </div>`;
-      t2p.insertAdjacentHTML("beforeend", addToT2p);
+      t2p.insertAdjacentHTML('beforeend', addToT2p);
       const addtxt2 = `<p class="textbox">${team2[i].name}</p>`;
-      t2px.insertAdjacentHTML("beforeend", addtxt2);
+      t2px.insertAdjacentHTML('beforeend', addtxt2);
     }
   }
 
   /////////////SECTION////////THREE TEAMS FAIR///////////////////////////////////////
   else if (
-    document.getElementById("ar3").style.opacity === "1" &&
-    document.getElementById("ar2").style.opacity === "1"
+    document.getElementById('ar3').style.opacity === '1' &&
+    document.getElementById('ar2').style.opacity === '1'
   ) {
     for (i = 0; i < thisWeekPlayers.length; i++) {
       ovr(thisWeekPlayers[i]);
@@ -999,8 +1007,8 @@ function start() {
     
     `;
 
-    const t1p = document.getElementById("t1p");
-    const t1px = document.getElementById("t1txt");
+    const t1p = document.getElementById('t1p');
+    const t1px = document.getElementById('t1txt');
 
     for (let i = 1; i < team1.length; i++) {
       const addToT1p = `<div class="lineup__box">
@@ -1011,13 +1019,13 @@ function start() {
         />
 
       </div>`;
-      t1p.insertAdjacentHTML("beforeend", addToT1p);
+      t1p.insertAdjacentHTML('beforeend', addToT1p);
       const addtxt1 = `<p class="textbox">${team1[i].name}</p>`;
-      t1px.insertAdjacentHTML("beforeend", addtxt1);
+      t1px.insertAdjacentHTML('beforeend', addtxt1);
     }
 
-    const t2p = document.getElementById("t2p");
-    const t2px = document.getElementById("t2txt");
+    const t2p = document.getElementById('t2p');
+    const t2px = document.getElementById('t2txt');
 
     for (let i = 1; i < team2.length; i++) {
       const addToT2p = `<div class="lineup__box">
@@ -1028,12 +1036,12 @@ function start() {
         />
 
       </div>`;
-      t2p.insertAdjacentHTML("beforeend", addToT2p);
+      t2p.insertAdjacentHTML('beforeend', addToT2p);
       const addtxt2 = `<p class="textbox">${team2[i].name}</p>`;
-      t2px.insertAdjacentHTML("beforeend", addtxt2);
+      t2px.insertAdjacentHTML('beforeend', addtxt2);
     }
-    const t3p = document.getElementById("t3p");
-    const t3px = document.getElementById("t3txt");
+    const t3p = document.getElementById('t3p');
+    const t3px = document.getElementById('t3txt');
 
     for (let i = 1; i < team3.length; i++) {
       const addToT3p = `<div class="lineup__box">
@@ -1044,16 +1052,16 @@ function start() {
         />
   
       </div>`;
-      t3p.insertAdjacentHTML("beforeend", addToT3p);
+      t3p.insertAdjacentHTML('beforeend', addToT3p);
       const addtxt3 = `<p class="textbox">${team3[i].name}</p>`;
-      t3px.insertAdjacentHTML("beforeend", addtxt3);
+      t3px.insertAdjacentHTML('beforeend', addtxt3);
     }
   }
 
   //////////////////////////////SECTION////TWO TEAMS RANDOM/////////////////////////
   else if (
-    document.getElementById("ar1").style.opacity === "1" &&
-    document.getElementById("ar4").style.opacity === "1"
+    document.getElementById('ar1').style.opacity === '1' &&
+    document.getElementById('ar4').style.opacity === '1'
   ) {
     let shuffledplayers = shuffle(thisWeekPlayers);
 
@@ -1218,8 +1226,8 @@ function start() {
   
   `;
 
-    const t1p = document.getElementById("t1p");
-    const t1px = document.getElementById("t1txt");
+    const t1p = document.getElementById('t1p');
+    const t1px = document.getElementById('t1txt');
 
     for (let i = 1; i < team1.length; i++) {
       const addToT1p = `<div class="lineup__box">
@@ -1230,13 +1238,13 @@ function start() {
       />
 
     </div>`;
-      t1p.insertAdjacentHTML("beforeend", addToT1p);
+      t1p.insertAdjacentHTML('beforeend', addToT1p);
       const addtxt1 = `<p class="textbox">${team1[i].name}</p>`;
-      t1px.insertAdjacentHTML("beforeend", addtxt1);
+      t1px.insertAdjacentHTML('beforeend', addtxt1);
     }
 
-    const t2p = document.getElementById("t2p");
-    const t2px = document.getElementById("t2txt");
+    const t2p = document.getElementById('t2p');
+    const t2px = document.getElementById('t2txt');
 
     for (let i = 1; i < team2.length; i++) {
       const addToT2p = `<div class="lineup__box">
@@ -1247,16 +1255,16 @@ function start() {
       />
 
     </div>`;
-      t2p.insertAdjacentHTML("beforeend", addToT2p);
+      t2p.insertAdjacentHTML('beforeend', addToT2p);
       const addtxt2 = `<p class="textbox">${team2[i].name}</p>`;
-      t2px.insertAdjacentHTML("beforeend", addtxt2);
+      t2px.insertAdjacentHTML('beforeend', addtxt2);
     }
   }
 
   //////////////////////////////SECTION////THREE TEAMS RANDOM/////////////////////////
   else {
-    console.log("random");
-    console.log("threeteams");
+    console.log('random');
+    console.log('threeteams');
 
     let shuffledplayers = shuffle(thisWeekPlayers);
 
@@ -1478,8 +1486,8 @@ function start() {
     
     `;
 
-    const t1p = document.getElementById("t1p");
-    const t1px = document.getElementById("t1txt");
+    const t1p = document.getElementById('t1p');
+    const t1px = document.getElementById('t1txt');
 
     for (let i = 1; i < team1.length; i++) {
       const addToT1p = `<div class="lineup__box">
@@ -1490,13 +1498,13 @@ function start() {
         />
 
       </div>`;
-      t1p.insertAdjacentHTML("beforeend", addToT1p);
+      t1p.insertAdjacentHTML('beforeend', addToT1p);
       const addtxt1 = `<p class="textbox">${team1[i].name}</p>`;
-      t1px.insertAdjacentHTML("beforeend", addtxt1);
+      t1px.insertAdjacentHTML('beforeend', addtxt1);
     }
 
-    const t2p = document.getElementById("t2p");
-    const t2px = document.getElementById("t2txt");
+    const t2p = document.getElementById('t2p');
+    const t2px = document.getElementById('t2txt');
 
     for (let i = 1; i < team2.length; i++) {
       const addToT2p = `<div class="lineup__box">
@@ -1507,12 +1515,12 @@ function start() {
         />
 
       </div>`;
-      t2p.insertAdjacentHTML("beforeend", addToT2p);
+      t2p.insertAdjacentHTML('beforeend', addToT2p);
       const addtxt2 = `<p class="textbox">${team2[i].name}</p>`;
-      t2px.insertAdjacentHTML("beforeend", addtxt2);
+      t2px.insertAdjacentHTML('beforeend', addtxt2);
     }
-    const t3p = document.getElementById("t3p");
-    const t3px = document.getElementById("t3txt");
+    const t3p = document.getElementById('t3p');
+    const t3px = document.getElementById('t3txt');
 
     for (let i = 1; i < team3.length; i++) {
       const addToT3p = `<div class="lineup__box">
@@ -1523,9 +1531,9 @@ function start() {
         />
   
       </div>`;
-      t3p.insertAdjacentHTML("beforeend", addToT3p);
+      t3p.insertAdjacentHTML('beforeend', addToT3p);
       const addtxt3 = `<p class="textbox">${team3[i].name}</p>`;
-      t3px.insertAdjacentHTML("beforeend", addtxt3);
+      t3px.insertAdjacentHTML('beforeend', addtxt3);
     }
   }
 }
@@ -1533,36 +1541,36 @@ function start() {
 //////////////////////////////////////////////////////////////////////////////////
 
 function next() {
-  if (document.getElementById("ar2").style.opacity == "1") {
+  if (document.getElementById('ar2').style.opacity == '1') {
     if (thisWeekPlayers.length >= 6) {
-      disp.style.display = "none";
-      disp1.style.display = "flex";
-      document.getElementById("ar3").style.opacity = "1";
+      disp.style.display = 'none';
+      disp1.style.display = 'flex';
+      document.getElementById('ar3').style.opacity = '1';
     } else {
-      errtxt.innerHTML = "Please select at least 6 players";
-      err.style.display = "flex";
+      errtxt.innerHTML = 'Please select at least 6 players';
+      err.style.display = 'flex';
     }
   } else {
     if (thisWeekPlayers.length <= 12) {
-      disp.style.display = "none";
-      disp1.style.display = "flex";
-      document.getElementById("ar3").style.opacity = "1";
+      disp.style.display = 'none';
+      disp1.style.display = 'flex';
+      document.getElementById('ar3').style.opacity = '1';
     } else {
-      const errtxt = document.getElementById("errtxt");
+      const errtxt = document.getElementById('errtxt');
       errtxt.innerHTML =
-        "Two teams and more than 12 people is not a good idea!";
-      err.style.display = "flex";
+        'Two teams and more than 12 people is not a good idea!';
+      err.style.display = 'flex';
     }
   }
 }
 //////////////////////////////////////////////////////////////////////////////////
 
-let array1 = ["a", "b", "c", "f", "d", "e", "g"];
+let array1 = ['a', 'b', 'c', 'f', 'd', 'e', 'g'];
 
 // let team1 = [];
 let team2 = [];
 let team3 = [];
 
 function ok() {
-  err.style.display = "none";
+  err.style.display = 'none';
 }
