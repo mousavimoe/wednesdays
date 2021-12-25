@@ -11,27 +11,27 @@ class Player {
   }
 }
 
-const mohamad = new Player('moe', 6, 6, 10, 10, 10);
+const mohamad = new Player('moe', 5, 5, 10, 10, 10);
 const keshavarz = new Player('keshavarz', 10, 6, 9, 8, 7);
 const bahram = new Player('bahram', 6, 5, 5, 5, 6);
-const bahman = new Player('bahman', 5, 4, 8, 7, 9);
-const rajab = new Player('rajab', 2, 2, 5, 9, 4);
-const ehsan = new Player('ehsan', 8, 6, 8, 7, 7);
+const bahman = new Player('bahman', 5, 4, 8, 7, 7);
+const rajab = new Player('rajab', 3, 3, 5, 9, 4);
+const ehsan = new Player('ehsan', 8, 7, 8, 7, 7);
 const navid = new Player('navid', 6, 5, 7, 7, 5);
 const shahab = new Player('shahab', 8, 5, 6, 6, 6);
 const mahmudi = new Player('mahmudi', 7, 10, 7, 7, 6);
-const rasool = new Player('rasool', 5, 2, 8, 9, 9);
+const rasool = new Player('rasool', 7, 3, 8, 9, 9);
 const mehrdad = new Player('mehrdad', 5, 7, 6, 5, 8);
 const mehrshad = new Player('mehrshad', 7, 7, 8, 8, 8);
-const iman = new Player('iman', 5, 5, 7, 7, 8);
+const iman = new Player('iman', 5, 5, 6, 6, 7);
 const hamidian = new Player('hamidian', 6, 3, 2, 2, 2);
-const payam = new Player('payam', 7, 6, 9, 7, 7);
-const farahani = new Player('farahani', 0, 7, 7, 7, 8);
+const payam = new Player('payam', 7, 7, 10, 7, 7);
+const farahani = new Player('farahani', 0, 7, 7, 6, 8);
 const mamul = new Player('mamul', 6, 6, 8, 7, 6);
-const ali1 = new Player('ali', 8, 7, 6, 6, 5);
+const ali1 = new Player('ali', 8, 6, 6, 6, 5);
 const ali2 = new Player('ali2', 7, 6, 7, 7, 7);
 const masoud = new Player('masoud', 7, 7, 7, 7, 7);
-const reza = new Player('reza', 7, 7, 7, 7, 7);
+const reza = new Player('reza', 6, 7, 7, 7, 7);
 const unknown = new Player('unknown');
 
 const allPlayers = [
