@@ -32,6 +32,9 @@ const ali1 = new Player('ali', 8, 6, 6, 6, 5);
 const ali2 = new Player('ali2', 7, 6, 7, 7, 7);
 const masoud = new Player('masoud', 7, 7, 7, 7, 7);
 const reza = new Player('reza', 6, 7, 7, 7, 7);
+const mohsen = new Player('mohsen', 6, 6, 6, 6, 6);
+const duste_ali = new Player('duste_ali', 5, 5, 5, 5, 5);
+
 const unknown = new Player('unknown');
 
 const allPlayers = [
@@ -56,6 +59,8 @@ const allPlayers = [
   ali2,
   masoud,
   reza,
+  mohsen,
+  duste_ali,
   unknown,
 ];
 
