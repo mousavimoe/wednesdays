@@ -14,7 +14,7 @@ class Player {
 const mohamad = new Player('moe', 5, 5, 10, 10, 10);
 const keshavarz = new Player('keshavarz', 10, 6, 9, 8, 7);
 const bahram = new Player('bahram', 6, 5, 5, 5, 6);
-const bahman = new Player('bahman', 5, 4, 8, 7, 7);
+const bahman = new Player('bahman', 4, 4, 5, 6, 6);
 const rajab = new Player('rajab', 3, 3, 5, 9, 4);
 const ehsan = new Player('ehsan', 8, 7, 8, 7, 7);
 const navid = new Player('navid', 6, 5, 7, 7, 5);
