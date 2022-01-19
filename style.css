@@ -42,6 +42,8 @@ main {
 
 .fade {
   filter: grayscale(100%);
+  border: 10px solid black;
+
 }
 
 
